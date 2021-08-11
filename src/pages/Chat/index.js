@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class App extends Component {
   render() {
     return (
-      <LinearGradient colors={['#373737', '#000',]}
+      <LinearGradient colors={['#ffffff', '#3202D1',]}
         style={{
           position: "absolute",
           width: "100%",

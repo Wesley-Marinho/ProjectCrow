@@ -14,24 +14,25 @@ function Tabs() {
         <Tab.Navigator
             tabBarOptions={{
                 style: {
-                    backgroundColor: '#000',
+                    backgroundColor: '#3202D1',
+                    border:0,
                 },
                 labelStyle: {
                     fontWeight: 'bold'
                 },
-                activeTintColor: '#000',
-                activeBackgroundColor: '#fff',
-                inactiveTintColor: '#fff',
+                activeTintColor: '#3202D1',
+                activeBackgroundColor: '#ffffff',
+                inactiveTintColor: '#ffffff',
             }}>
             <Tab.Screen name="Maps" component={Maps}
                 options={{
                     tabBarIcon: ({ color, size }) => (
-                        <FontAwesome5 name='chess-rook' color={color} size={size} />
+                        <FontAwesome5 name='map-signs' color={color} size={size} />
                     )
                 }} />
             <Tab.Screen name="Chat" component={Chat} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <FontAwesome5 name='dice-d20' color={color} size={size} />
+                    <FontAwesome5 name='comment-dots' style='solid' color={color} size={size} />
                 )
             }} />
 
