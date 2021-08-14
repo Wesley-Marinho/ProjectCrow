@@ -15,7 +15,7 @@ function Tabs() {
             tabBarOptions={{
                 style: {
                     backgroundColor: '#3202D1',
-                    border:0,
+                    border: 0,
                 },
                 labelStyle: {
                     fontWeight: 'bold'

@@ -8,7 +8,7 @@ function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [loadingAuth, setLoadingAuth] = useState(false);
-    
+
     useEffect(() => {
         async function loadStorage() {
             const storageUser = await AsyncStorage.getItem('Auth_user');
@@ -43,14 +43,14 @@ function AuthProvider({ children }) {
             });
     }
 
-    async function resetPassword(Email){
-       await firebase.auth().sendPasswordResetEmail(Email)
-          .then(() => {
-            Alert.alert('Atenção!', 'E-mail enviado.');
-          }).catch(() => {
-            Alert.alert('Opa!', 'Algo deu errado.');
-          })
-      }
+    async function resetPassword(Email) {
+        await firebase.auth().sendPasswordResetEmail(Email)
+            .then(() => {
+                Alert.alert('Atenção!', 'E-mail enviado.');
+            }).catch(() => {
+                Alert.alert('Opa!', 'Algo deu errado.');
+            })
+    }
 
     async function signUp(email, password) {
         setLoadingAuth(true);
@@ -88,22 +88,10 @@ function AuthProvider({ children }) {
             })
     }
 
-    async function handleDeleteF(key, uid) {
-        await firebase.database().ref('npcF').child(uid).child(key).remove();
-    }
-
-    async function handleDeleteT(key, uid) {
-        await firebase.database().ref('npcT').child(uid).child(key).remove();
-    }
-
-    async function handleDeleteV(key, uid) {
-        await firebase.database().ref('npcV').child(uid).child(key).remove();
-    }
-
     return (
         <AuthContext.Provider value={{
             signed: !!user, user, loading, signUp: signUp, resetPassword,
-            signIn: signIn, signOut, loadingAuth, handleDeleteF, handleDeleteT, handleDeleteV
+            signIn: signIn, signOut, loadingAuth,
         }}>
             {children}
         </AuthContext.Provider>

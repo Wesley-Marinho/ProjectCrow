@@ -24,7 +24,7 @@ export default function app() {
             </View>
 
             <View style={style.containerImg}>
-            <TouchableOpacity style={style.buttonCriar}
+                <TouchableOpacity style={style.buttonCriar}
                     onPress={() => navigation.navigate('SignIn')}>
                     <Text style={style.link}>Criar Conta</Text>
                 </TouchableOpacity>
