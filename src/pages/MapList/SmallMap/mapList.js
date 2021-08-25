@@ -1,21 +1,20 @@
-import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
-import { Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Image, Text, View } from 'react-native';
+import style from "./style.js";
+export default function mapList() {
 
-export default function Listagem({ data }) {
-
-  
   return (
-    <View style={estilos.lista}>
-      <Text style={estilos.txtC}>{data.npcF}</Text>
-      <TouchableOpacity
-        style={{
-          alignItems:'flex-end',
-        }}
-        onPress={Alerta}>
-        <FontAwesome5 name='trash-alt' color='#fff' size={30} />
-      </TouchableOpacity>
+    <View style={style.listContainer}>
+      <View style={style.listItens}>
+        <Image
+          style={style.img}
+          source={require('../../../img/SmallMap.png')}
+        />
+      </View>
+
+      <View style={style.listItens}>
+        <Text style={style.tittle}>Titulo</Text>
+      </View>
     </View>
   )
 }

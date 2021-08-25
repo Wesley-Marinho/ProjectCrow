@@ -57,37 +57,34 @@ function AppRoutes() {
             <AuthStack.Screen name="SmallMap" component={SmallMap}
                 options={{
                     headerStyle: {
-                        backgroundColor: '#373737',
+                        backgroundColor: '#ffffff',
                         borderBottomWidth: 0.25,
-                        borderBottomColor: '#fff'
+                        borderBottomColor: '#000000',
                     },
-                    headerTintColor: '#FFF',
-                    headerBackTitleVisible: false,
-                    headerTitle: 'Mapas'
+                    headerTintColor: '#000000',
+                    headerTitle: 'Mapas Pequenos'
                 }} />
 
             <AuthStack.Screen name="MediumMap" component={MediumMap}
                 options={{
                     headerStyle: {
-                        backgroundColor: '#373737',
+                        backgroundColor: '#ffffff',
                         borderBottomWidth: 0.25,
-                        borderBottomColor: '#fff'
+                        borderBottomColor: '#000000',
                     },
-                    headerTintColor: '#FFF',
-                    headerBackTitleVisible: false,
-                    headerTitle: 'Mapas'
+                    headerTintColor: '#000000',
+                    headerTitle: 'Mapas Médios'
                 }} />
 
             <AuthStack.Screen name="BigMap" component={BigMap}
                 options={{
                     headerStyle: {
-                        backgroundColor: '#373737',
+                        backgroundColor: '#ffffff',
                         borderBottomWidth: 0.25,
-                        borderBottomColor: '#fff'
+                        borderBottomColor: '#000000',
                     },
-                    headerTintColor: '#FFF',
-                    headerBackTitleVisible: false,
-                    headerTitle: 'Mapas'
+                    headerTintColor: '#000000',
+                    headerTitle: 'Mapas Grandes'
                 }} />
 
 

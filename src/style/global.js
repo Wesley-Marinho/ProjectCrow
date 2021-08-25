@@ -17,8 +17,14 @@ export default StyleSheet.create({
         paddingTop: 20,
         paddingLeft: 5,
     },
+    LinearGradientList: {
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+    },
     img:{
-        width: 200,
+        width: 130,
         height: 200,
     },
+  
 })
