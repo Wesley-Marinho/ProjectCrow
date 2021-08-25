@@ -4,8 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import Chat from "../pages/Chat";
 import LogOut from '../pages/LogOut';
+import BigMap from '../pages/MapList/BigMap';
+import MediumMap from '../pages/MapList/MediumMap';
+import SmallMap from '../pages/MapList/SmallMap';
 import Maps from '../pages/Maps';
-
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
 
@@ -20,8 +22,8 @@ function Tabs() {
                 labelStyle: {
                     fontWeight: 'bold'
                 },
-                activeTintColor: '#3202D1',
-                activeBackgroundColor: '#ffffff',
+                activeTintColor: '#ffffff',
+                activeBackgroundColor: '#000000',
                 inactiveTintColor: '#ffffff',
             }}>
             <Tab.Screen name="Maps" component={Maps}
@@ -51,7 +53,8 @@ function AppRoutes() {
         <AuthStack.Navigator>
             <AuthStack.Screen name="Home" component={Tabs}
                 options={{ headerShown: false }} />
-            <AuthStack.Screen name="Maps" component={Maps}
+
+            <AuthStack.Screen name="SmallMap" component={SmallMap}
                 options={{
                     headerStyle: {
                         backgroundColor: '#373737',
@@ -62,6 +65,31 @@ function AppRoutes() {
                     headerBackTitleVisible: false,
                     headerTitle: 'Mapas'
                 }} />
+
+            <AuthStack.Screen name="MediumMap" component={MediumMap}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#373737',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#fff'
+                    },
+                    headerTintColor: '#FFF',
+                    headerBackTitleVisible: false,
+                    headerTitle: 'Mapas'
+                }} />
+
+            <AuthStack.Screen name="BigMap" component={BigMap}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#373737',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#fff'
+                    },
+                    headerTintColor: '#FFF',
+                    headerBackTitleVisible: false,
+                    headerTitle: 'Mapas'
+                }} />
+
 
         </AuthStack.Navigator>
     );
