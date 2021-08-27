@@ -4,10 +4,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import Chat from "../pages/Chat";
 import LogOut from '../pages/LogOut';
-import BigMap from '../pages/MapList/BigMap';
-import MediumMap from '../pages/MapList/MediumMap';
-import SmallMap from '../pages/MapList/SmallMap';
 import Maps from '../pages/Maps';
+import CrowIsland from '../pages/MapsList/Small/CrowIsland';
+import BigMap from '../pages/MapType/BigMap';
+import MediumMap from '../pages/MapType/MediumMap';
+import SmallMap from '../pages/MapType/SmallMap';
+
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
 
@@ -87,7 +89,16 @@ function AppRoutes() {
                     headerTitle: 'Mapas Grandes'
                 }} />
 
-
+            <AuthStack.Screen name="CrowIsland" component={CrowIsland}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Crow Island'
+                }} />
         </AuthStack.Navigator>
     );
 }

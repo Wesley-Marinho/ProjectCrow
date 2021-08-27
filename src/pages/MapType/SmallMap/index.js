@@ -9,8 +9,6 @@ export default function App() {
             style={global.LinearGradientList}>
             <View >
                     <MapList></MapList>
-                    <MapList></MapList>
-                    <MapList></MapList>
             </View>
         </LinearGradient>
     );

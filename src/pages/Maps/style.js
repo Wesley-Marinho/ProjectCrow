@@ -1,5 +1,15 @@
+import { useFonts } from 'expo-font';
 import { StyleSheet } from 'react-native';
 
+function loader() {
+    const [loaded] = useFonts({
+        Persona: require('../../assets/fonts/Persona.ttf'),
+    });
+
+    if (!loaded) {
+        return null;
+    }
+}
 
 export default StyleSheet.create({
 
@@ -9,11 +19,12 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         paddingBottom: 20,
+      
     },
     container: {
         alignItems: 'center',
         paddingTop: 20
-        
+
     },
     link: {
         color: '#ffffff',
