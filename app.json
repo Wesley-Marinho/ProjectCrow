@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Crow Project",
-    "slug": "Crow-Project",
+    "name": "projectCrow",
+    "slug": "projectCrow",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,15 +18,15 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.crow.project",
+      "bundleIdentifier": "com.projectCrow",
       "buildNumber": "1.0.1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#3202D1"
+        "backgroundColor": "#ffffff"
       },
-      "package": "com.crow.project",
+      "package": "com.projectCrow",
       "versionCode": 3
     },
     "web": {

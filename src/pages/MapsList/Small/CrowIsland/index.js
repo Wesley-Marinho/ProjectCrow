@@ -1,4 +1,4 @@
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
 import style from './style.js';
@@ -23,11 +23,11 @@ export default function index() {
             </TouchableOpacity>
 
             <TouchableOpacity style={style.cityButton1}>
-                <FontAwesome5 name='university' size={30} color={"#ffffff"} />
+                <MaterialCommunityIcons name="home-group" size={30} color="#ffffff" />
             </TouchableOpacity>
 
             <TouchableOpacity style={style.cityButton2}>
-                <FontAwesome5 name='university' size={30} color={"#ffffff"} />
+                <MaterialCommunityIcons name="home-group" size={30} color="#ffffff" />
             </TouchableOpacity>
 
             <TouchableOpacity style={style.castleButton}>
@@ -35,7 +35,7 @@ export default function index() {
             </TouchableOpacity>
 
             <TouchableOpacity style={style.dungeonButton}>
-                <FontAwesome5 name='dungeon' size={30} color={"#ffffff"} />
+                <MaterialCommunityIcons name="sword-cross" size={30} color={"#ffffff"} />
             </TouchableOpacity>
         </View>
     )
