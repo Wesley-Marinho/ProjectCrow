@@ -8,7 +8,7 @@ export default function App() {
         <LinearGradient colors={['#ffffff', '#3202D1',]}
             style={global.LinearGradientList}>
             <View >
-                    <MapList></MapList>
+                <MapList></MapList>
             </View>
         </LinearGradient>
     );

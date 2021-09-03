@@ -6,6 +6,13 @@ import Chat from "../pages/Chat";
 import LogOut from '../pages/LogOut';
 import Maps from '../pages/Maps';
 import CrowIsland from '../pages/MapsList/Small/CrowIsland';
+import Doughnut from '../pages/MapsList/Small/CrowIsland/location/castleDoughnut';
+import MageLabirinty from '../pages/MapsList/Small/CrowIsland/location/dungeonMageLabirinty';
+import Haum from '../pages/MapsList/Small/CrowIsland/location/forestHaun';
+import Noir from '../pages/MapsList/Small/CrowIsland/location/forestNoir';
+import OfStone from '../pages/MapsList/Small/CrowIsland/location/forestOfStone';
+import Caruaru from '../pages/MapsList/Small/CrowIsland/location/villageCaruaru';
+import Yamogum from '../pages/MapsList/Small/CrowIsland/location/villageYamogum';
 import BigMap from '../pages/MapType/BigMap';
 import MediumMap from '../pages/MapType/MediumMap';
 import SmallMap from '../pages/MapType/SmallMap';
@@ -98,6 +105,83 @@ function AppRoutes() {
                     },
                     headerTintColor: '#000000',
                     headerTitle: 'Crow Island'
+                }} />
+
+            <AuthStack.Screen name="Haum" component={Haum}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Haum'
+                }} />
+
+            <AuthStack.Screen name="Doughnut" component={Doughnut}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Doughnut'
+                }} />
+
+            <AuthStack.Screen name="MageLabirinty" component={MageLabirinty}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'MageLabirinty'
+                }} />
+
+            <AuthStack.Screen name="Noir" component={Noir}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Noir'
+                }} />
+
+            <AuthStack.Screen name="OfStone" component={OfStone}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'OfStone'
+                }} />
+
+            <AuthStack.Screen name="Caruaru" component={Caruaru}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Caruaru'
+                }} />
+
+            <AuthStack.Screen name="Yamogum" component={Yamogum}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Yamogum'
                 }} />
         </AuthStack.Navigator>
     );
