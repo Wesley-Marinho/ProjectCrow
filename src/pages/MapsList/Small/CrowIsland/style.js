@@ -9,40 +9,40 @@ export default StyleSheet.create({
 
     forestButton1: {
         position: 'absolute',
-        right: '27%',
+        right: '28%',
         bottom: "32%",
         backgroundColor: '#06ED8C',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
       
     },
 
     forestButton2: {
         position: 'absolute',
-        left: "25%",
+        left: "26%",
         bottom: "30%",
         backgroundColor: '#06ED8C',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
       
     },
 
     forestButton3: {
         position: 'absolute',
         right: "32%",
-        top: "1%",
+        top: "2%",
         backgroundColor: '#06ED8C',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
       
     },
 
@@ -50,24 +50,24 @@ export default StyleSheet.create({
         position: 'absolute',
         right: "40%",
         bottom: "20%",
-        backgroundColor: '#506CB0',
+        backgroundColor: '#456CB0',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
     },
 
     cityButton2: {
         position: 'absolute',
-        left: "40%",
+        left: "42%",
         bottom: "40%",
-        backgroundColor: '#506CB0',
+        backgroundColor: '#456CB0',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
     },
 
     castleButton:{
@@ -78,19 +78,19 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
     },
 
     dungeonButton:{
         position: 'absolute',
         right: "8%",
-        top: "48%",
+        top: "46%",
         backgroundColor: '#B00600',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
     }
 })

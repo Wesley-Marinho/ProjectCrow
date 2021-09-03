@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import Chat from "../pages/Chat";
+import Items from '../pages/Items';
 import LogOut from '../pages/LogOut';
 import Maps from '../pages/Maps';
 import CrowIsland from '../pages/MapsList/Small/CrowIsland';
@@ -16,6 +17,7 @@ import Yamogum from '../pages/MapsList/Small/CrowIsland/location/villageYamogum'
 import BigMap from '../pages/MapType/BigMap';
 import MediumMap from '../pages/MapType/MediumMap';
 import SmallMap from '../pages/MapType/SmallMap';
+import Monster from '../pages/Monsters';
 
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
@@ -182,6 +184,28 @@ function AppRoutes() {
                     },
                     headerTintColor: '#000000',
                     headerTitle: 'Yamogum'
+                }} />
+
+            <AuthStack.Screen name="Monster" component={Monster}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Monstros'
+                }} />
+
+            <AuthStack.Screen name="Items" component={Items}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Itens'
                 }} />
         </AuthStack.Navigator>
     );
