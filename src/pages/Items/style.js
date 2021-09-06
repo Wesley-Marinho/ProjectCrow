@@ -5,29 +5,34 @@ export default StyleSheet.create({
 
     tittle: {
         color: '#000000',
-        fontSize: 25,
+        fontSize: 40,
         fontWeight: 'bold',
         textAlign: 'center',
         paddingBottom: 20,
     },
-    container: {
+
+    imgContainer: {
         alignItems: 'center',
-        paddingTop: 20
-        
-    },
-    link: {
-        color: '#ffffff',
-        fontSize: 25,
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
-    button: {
-        justifyContent: 'center',
-        borderWidth: 5,
-        borderRadius: 100,
-        backgroundColor: '#000000',
-        width: 200,
-        height: 50,
     },
 
+    logo: {
+        width: 290,
+        height: 450,
+        position: 'absolute',
+        top: 50,
+        opacity: 0.75,
+    },
+
+    itemText: {
+        color: '#ffffff',
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+    
+    itemContainer: {
+        backgroundColor: '#000000',
+        opacity: 0.8,
+        padding: 10,
+        margin: 10,
+    }
 })
