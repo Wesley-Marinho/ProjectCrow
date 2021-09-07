@@ -5,32 +5,39 @@ export default function List({ data }) {
   return (
 
 
-    <View style={style.itemContainer}>
-      <Text style={style.tittle}>Nome: {data.name}</Text>
+    <View style={style.monsterContainer}>
 
       <View style={style.container}>
-        <Text style={style.itemText}>Descrição: {data.description}</Text>
+        <Text style={style.tittle}>Nome: {data.name}</Text>
+      </View>
+
+      <View style={style.container}>
+        <Text style={style.tittle}>Descrição</Text>
+        <Text style={style.text}>{data.description}</Text>
       </View>
 
       <View style={style.container}>
         <Text style={style.tittle}>Atributos</Text>
-        <Text style={style.itemText}>Carisma : {data.car}</Text>
-        <Text style={style.itemText}>Constituição : {data.con}</Text>
-        <Text style={style.itemText}>Destreza : {data.des}</Text>
-        <Text style={style.itemText}>Força : {data.for}</Text>
-        <Text style={style.itemText}>Inteligencia : {data.int}</Text>
-        <Text style={style.itemText}>Sabedoria : {data.sab}</Text>
+        <Text style={style.textAttributes}>Carisma : {data.car}</Text>
+        <Text style={style.textAttributes}>Constituição : {data.con}</Text>
+        <Text style={style.textAttributes}>Destreza : {data.des}</Text>
+        <Text style={style.textAttributes}>Força : {data.for}</Text>
+        <Text style={style.textAttributes}>Inteligencia : {data.int}</Text>
+        <Text style={style.textAttributes}>Sabedoria : {data.sab}</Text>
+        <View style={style.otherAttributes}>
+          <Text style={style.text}>Pontos de vida: {data.healthPoints}</Text>
+          <Text style={style.text}>Classe de armadura: {data.armor}</Text>
+          <Text style={style.text}>Nivel de desafio: {data.challengeLevel}</Text>
+          <Text style={style.text}>Experiencia apos a derrota: {data.exp}</Text>
+          <Text style={style.text}>Deslocamento: {data.displacement}</Text>
+        </View>
       </View>
 
-      <Text style={style.itemText}>Pontos de vida: {data.healthPoints}</Text>
-      <Text style={style.itemText}>Classe de armadura: {data.armor}</Text>
-      <Text style={style.itemText}>Nivel de desafio: {data.challengeLevel}</Text>
-      <Text style={style.itemText}>Experiencia apos a derrota: {data.exp}</Text>
-      <Text style={style.itemText}>Deslocamento: {data.displacement}</Text>
       <View style={style.container}>
         <Text style={style.tittle}>Ataques</Text>
+        <Text style={style.text}>{data.attacks}</Text>
       </View>
-      <Text style={style.itemText}>{data.attacks}</Text>
+
     </View>
 
   )

@@ -7,6 +7,7 @@ export default StyleSheet.create({
         color: '#ffffff',
         fontSize: 20,
         fontWeight: 'bold',
+        paddingHorizontal: 4
     },
 
     imgContainer: {
@@ -21,13 +22,20 @@ export default StyleSheet.create({
         opacity: 0.75,
     },
 
-    itemText: {
+    text: {
         color: '#ffffff',
-        fontSize: 15,
-        fontWeight: 'bold',
+        fontSize: 20,
+        paddingHorizontal:4
     },
-    
-    itemContainer: {
+
+    textAttributes: {
+        color: '#ffffff',
+        fontSize: 20,
+        paddingVertical:2,
+        paddingHorizontal:4
+    },
+
+    monsterContainer: {
         backgroundColor: '#000000',
         opacity: 0.8,
         padding: 10,
@@ -35,6 +43,13 @@ export default StyleSheet.create({
     },
 
     container: {
-        paddingVertical: 10
+        paddingVertical: 5,
+        borderColor:'#ffffff',
+        borderWidth: 1,
+        
+    },
+
+    otherAttributes: {
+        paddingTop: 10,
     }
 })
