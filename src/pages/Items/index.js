@@ -24,7 +24,7 @@ export default function App() {
                         valor: childItem.val().valor,
                         propriedades: childItem.val().propriedades,
                     };
-                    setItem(oldArray => [...oldArray, data].reverse());
+                    setItem(oldArray => [...oldArray, data]);
                 })
             })
 

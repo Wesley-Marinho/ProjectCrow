@@ -1,19 +1,15 @@
-import React, { Component } from "react";
-import { Text, View } from "react-native";
-import style from "./style.js";
-class App extends Component {
-    render() {
-        return (
+import React from 'react';
+import { Text, View } from 'react-native';
+import style from './style.js';
+export default function List({ data }) {
+    return (
 
-            <View style={style.listContainer}>
-                <Text style={style.tittle}>Titulo</Text>
-                <Text style={style.textBody}>Resumo</Text>
-                <Text style={style.textBody}>Numero de vagas: </Text>
-                <Text style={style.textBody}>Contato: </Text>
-            </View>
+        <View style={style.listContainer}>
+            <Text style={style.tittle}>{data.tittle}</Text>
+            <Text style={style.textBody}>Resumo da campanha: {data.summary}</Text>
+            <Text style={style.textBody}>Numero de vagas: {data.vacancies}</Text>
+            <Text style={style.textBody}>Contato: {data.contact}</Text>
+        </View>
 
-        );
-    }
+    );
 }
-
-export default App;

@@ -13,16 +13,16 @@ export default StyleSheet.create({
         fontSize: 17,
     },
 
-    label: {
-        color: '#000000',
-        fontSize: 15,
+    tittle: {
+        color: '#ffffff',
+        fontSize: 30,
         textAlign: 'center',
         fontWeight: 'bold',
     },
 
-    tittle: {
+    summary: {
         color: '#ffffff',
-        fontSize: 30,
+        fontSize: 15,
         textAlign: 'center',
         fontWeight: 'bold',
     },
@@ -47,24 +47,19 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'center',
-        padding: 10,
-        paddingTop: 40,
+        padding: '2%',
+        paddingTop: '10%',
     },
 
     listContainer: {
         backgroundColor: '#000000',
         opacity: 0.8,
-        padding: 10,
-        margin: 10,
-    },
-
-    listItens: {
-        padding: 10
+        padding: '2%',
+        margin: '2%',
     },
 
     imgContainer: {
         alignItems: 'center',
-       
     },
 
     imgChat: {
@@ -73,5 +68,63 @@ export default StyleSheet.create({
         position: 'absolute',
         top: 150,
         opacity: 0.75,
+    },
+
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+
+    },
+
+    modalView: {
+        margin: 20,
+        backgroundColor: 'white',
+        borderRadius: 20,
+        padding: 35,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    modalItems: {
+        alignItems: 'center',
+    },
+    openButton: {
+        backgroundColor: '#000000',
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+    },
+
+    closeButtonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        paddingBottom: "10%"
+
+    },
+
+    textInput:{
+        marginBottom: 10,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: '#000000',
+        borderRadius: 50,
+        height: 45,
+        width: "85%",
+        fontSize: 17,
+    },
+
+    tittleModal: {
+        color: '#000000',
+        fontSize: 20,
+        fontWeight: 'bold',
+        paddingBottom: "10%",
+        textAlign: 'center'
     }
+
 })

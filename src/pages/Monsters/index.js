@@ -36,7 +36,7 @@ export default function App() {
                         exp: childItem.val().exp,
                         healthPoints: childItem.val().healthPoints,
                     };
-                    setMonsters(oldArray => [...oldArray, data].reverse());
+                    setMonsters(oldArray => [...oldArray, data]);
                 })
             })
 
