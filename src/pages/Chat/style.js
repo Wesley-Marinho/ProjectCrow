@@ -105,7 +105,6 @@ export default StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         paddingBottom: "10%"
-
     },
 
     textInput:{
@@ -117,11 +116,24 @@ export default StyleSheet.create({
         height: 45,
         width: "85%",
         fontSize: 17,
+      
+    },
+
+    textInputSummary:{
+        marginBottom: 10,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: '#000000',
+        borderRadius: 50,
+        height: "50%",
+        width: "95%",
+        fontSize: 17,
+        textAlign: 'center'
     },
 
     tittleModal: {
         color: '#000000',
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: 'bold',
         paddingBottom: "10%",
         textAlign: 'center'

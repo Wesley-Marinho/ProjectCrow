@@ -79,31 +79,35 @@ export default function App() {
                 placeholder={'Titulo da aventura'}
                 placeholderTextColor={'#000000'}
                 underlineColorAndroid="transparent"
-                
+                maxLength={50}
               />
+
               <TextInput
-                style={style.textInput}
+                style={style.textInputSummary}
                 placeholder={'Resumo'}
                 placeholderTextColor={'#000000'}
                 underlineColorAndroid="transparent"
-                
-
+                multiline={true}
+                numberOfLines={10}
+                maxLength={280}
               />
+
               <TextInput
                 style={style.textInput}
                 placeholder={'Numero de vagas'}
                 placeholderTextColor={'#000000'}
                 underlineColorAndroid="transparent"
                 keyboardType="numeric"
+                maxLength={5}
               />
+
               <TextInput
                 style={style.textInput}
                 placeholder={'Forma de contato'}
                 placeholderTextColor={'#000000'}
                 underlineColorAndroid="transparent"
-               
+                maxLength={50}
               />
-
 
               <TouchableHighlight
                 style={style.openButton}>
