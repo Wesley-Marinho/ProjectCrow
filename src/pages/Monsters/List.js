@@ -18,12 +18,12 @@ export default function List({ data }) {
 
       <View style={style.container}>
         <Text style={style.tittle}>Atributos</Text>
-        <Text style={style.textAttributes}>Carisma : {data.car}</Text>
-        <Text style={style.textAttributes}>Constituição : {data.con}</Text>
-        <Text style={style.textAttributes}>Destreza : {data.des}</Text>
-        <Text style={style.textAttributes}>Força : {data.for}</Text>
-        <Text style={style.textAttributes}>Inteligencia : {data.int}</Text>
-        <Text style={style.textAttributes}>Sabedoria : {data.sab}</Text>
+        <Text style={style.textAttributes}>Carisma: {data.car}</Text>
+        <Text style={style.textAttributes}>Constituição: {data.con}</Text>
+        <Text style={style.textAttributes}>Destreza: {data.des}</Text>
+        <Text style={style.textAttributes}>Força: {data.for}</Text>
+        <Text style={style.textAttributes}>Inteligencia: {data.int}</Text>
+        <Text style={style.textAttributes}>Sabedoria: {data.sab}</Text>
         <View style={style.otherAttributes}>
           <Text style={style.text}>Pontos de vida: {data.healthPoints}</Text>
           <Text style={style.text}>Classe de armadura: {data.armor}</Text>
@@ -37,7 +37,6 @@ export default function List({ data }) {
         <Text style={style.tittle}>Ataques</Text>
         <Text style={style.text}>{data.attacks}</Text>
       </View>
-
     </View>
 
   )

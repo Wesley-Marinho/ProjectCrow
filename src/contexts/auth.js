@@ -9,6 +9,16 @@ function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
     const [loadingAuth, setLoadingAuth] = useState(false);
 
+    async function handleMessage(tittle, contact, vacancies, system) {
+      let key = await firebase.database().ref('chat').push().key;
+      await firebase.database().ref('chat').child(key).set({
+        tittle: tittle,
+        contact: contact,
+        vacancies: vacancies,
+        system: system,
+      })
+    }
+    
     useEffect(() => {
         async function loadStorage() {
             const storageUser = await AsyncStorage.getItem('Auth_user');
@@ -91,7 +101,7 @@ function AuthProvider({ children }) {
     return (
         <AuthContext.Provider value={{
             signed: !!user, user, loading, signUp: signUp, resetPassword,
-            signIn: signIn, signOut, loadingAuth,
+            signIn: signIn, signOut, loadingAuth, handleMessage
         }}>
             {children}
         </AuthContext.Provider>

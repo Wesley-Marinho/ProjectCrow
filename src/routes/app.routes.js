@@ -207,6 +207,7 @@ function AppRoutes() {
                     headerTintColor: '#000000',
                     headerTitle: 'Itens'
                 }} />
+
         </AuthStack.Navigator>
     );
 }

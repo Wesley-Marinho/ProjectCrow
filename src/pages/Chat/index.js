@@ -1,15 +1,23 @@
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { LinearGradient } from "expo-linear-gradient";
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FlatList, Image, Modal, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from "react-native";
+import { AuthContext } from '../../contexts/auth';
 import firebase from '../../database/firebaseConnection';
 import global from "../../style/global.js";
 import PostList from './postList.js';
 import style from './style.js';
 
 export default function App() {
+
   const [message, setMessage] = useState([]);
+  const { handleMessage } = useContext(AuthContext);
+  const [tittle, setTittle] = useState('');
+  const [contact, setContact] = useState('');
+  const [vacancies, setVacancies] = useState();
+  const [system, setSystem] = useState('')
   const [modalVisible, setModalVisible] = useState(false);
+
   useEffect(() => {
     async function dados() {
 
@@ -21,8 +29,7 @@ export default function App() {
             tittle: childItem.val().tittle,
             contact: childItem.val().contact,
             vacancies: childItem.val().vacancies,
-            summary: childItem.val().summary,
-
+            system: childItem.val().system,
           };
           setMessage(oldArray => [...oldArray, data].reverse());
         })
@@ -49,7 +56,7 @@ export default function App() {
           onPress={() => {
             setModalVisible(true);
           }}>
-          <FontAwesome5 name='plus-square' size={50} color={"#ffffff"} />
+          <FontAwesome5 name='plus' size={25} color={"#000000"} />
         </TouchableOpacity>
       </View>
 
@@ -57,8 +64,8 @@ export default function App() {
         animationType="slide"
         transparent={true}
         visible={modalVisible}>
-
         <View style={style.centeredView}>
+
           <View style={style.modalView}>
 
             <View style={style.closeButtonContainer}>
@@ -80,16 +87,30 @@ export default function App() {
                 placeholderTextColor={'#000000'}
                 underlineColorAndroid="transparent"
                 maxLength={50}
+                onChangeText={(text) => setTittle(text)}
+                value={tittle}
               />
 
               <TextInput
-                style={style.textInputSummary}
-                placeholder={'Resumo'}
+                style={style.textInput}
+                placeholder={'Sistema da Aventura'}
                 placeholderTextColor={'#000000'}
                 underlineColorAndroid="transparent"
                 multiline={true}
-                numberOfLines={10}
-                maxLength={280}
+                numberOfLines={50}
+                maxLength={140}
+                onChangeText={(text) => setSystem(text)}
+                value={system}
+              />
+
+              <TextInput
+                style={style.textInput}
+                placeholder={'Forma de contato'}
+                placeholderTextColor={'#000000'}
+                underlineColorAndroid="transparent"
+                maxLength={50}
+                onChangeText={(text) => setContact(text)}
+                value={contact}
               />
 
               <TextInput
@@ -99,22 +120,18 @@ export default function App() {
                 underlineColorAndroid="transparent"
                 keyboardType="numeric"
                 maxLength={5}
-              />
-
-              <TextInput
-                style={style.textInput}
-                placeholder={'Forma de contato'}
-                placeholderTextColor={'#000000'}
-                underlineColorAndroid="transparent"
-                maxLength={50}
+                onChangeText={(text) => setVacancies(text)}
+                value={vacancies}
               />
 
               <TouchableHighlight
-                style={style.openButton}>
-                <Text style={style.textBody}>Postar Campanha</Text>
+                style={style.openButton}
+                onPress={handleMessage(tittle, contact, vacancies, system),
+                  () => { setModalVisible(false) }}>
+                <Text style={style.textBody}>Postar Aventura</Text>
               </TouchableHighlight>
-            </View>
 
+            </View>
           </View>
         </View>
       </Modal>
