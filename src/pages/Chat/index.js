@@ -18,6 +18,13 @@ export default function App() {
   const [system, setSystem] = useState('')
   const [modalVisible, setModalVisible] = useState(false);
 
+  function handleClear() {
+    setTittle('');
+    setContact('');
+    setVacancies('');
+    setSystem('');
+  }
+
   useEffect(() => {
     async function dados() {
 
@@ -33,6 +40,16 @@ export default function App() {
           };
           setMessage(oldArray => [...oldArray, data].reverse());
         })
+        {
+          modalVisible ? (
+            setModalVisible(!modalVisible),
+            handleClear()
+          ) : (
+            handleClear()
+          )
+        }
+
+
       })
 
     }
@@ -126,8 +143,9 @@ export default function App() {
 
               <TouchableHighlight
                 style={style.openButton}
-                onPress={handleMessage(tittle, contact, vacancies, system),
-                  () => { setModalVisible(false) }}>
+                onPress={
+                  () => handleMessage(tittle, contact, vacancies, system)
+                }>
                 <Text style={style.textBody}>Postar Aventura</Text>
               </TouchableHighlight>
 
