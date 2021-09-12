@@ -18,7 +18,7 @@ import BigMap from '../pages/MapType/BigMap';
 import MediumMap from '../pages/MapType/MediumMap';
 import SmallMap from '../pages/MapType/SmallMap';
 import Monster from '../pages/Monsters';
-
+import MonsterPick from '../pages/Monsters/MonsterPick';
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
 
@@ -206,6 +206,17 @@ function AppRoutes() {
                     },
                     headerTintColor: '#000000',
                     headerTitle: 'Itens'
+                }} />
+
+            <AuthStack.Screen name="MonsterPick" component={MonsterPick}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'MonsterPick'
                 }} />
 
         </AuthStack.Navigator>

@@ -47,7 +47,6 @@ export default function app() {
       <View style={style.Container}>
         <TouchableOpacity style={style.button}
           onPress={handleLogin}>
-
           {
             loadingAuth ? (
               <ActivityIndicator size={20} color="#FFF" />

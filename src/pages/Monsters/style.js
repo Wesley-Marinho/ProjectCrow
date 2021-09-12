@@ -14,6 +14,11 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
 
+    loadingContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
     logo: {
         width: 290,
         height: 450,

@@ -40,7 +40,7 @@ export default StyleSheet.create({
     },
 
     tittle: {
-        color: '#ffffff',
+        color: '#000000',
         fontSize: 30,
         textAlign: 'center',
         fontWeight: 'bold',
@@ -118,6 +118,7 @@ export default StyleSheet.create({
     modalItems: {
         alignItems: 'center',
     },
+
     openButton: {
         backgroundColor: '#000000',
         borderRadius: 20,
@@ -131,36 +132,4 @@ export default StyleSheet.create({
         alignItems: 'center',
         paddingBottom: "10%"
     },
-
-    textInput: {
-        marginBottom: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 50,
-        height: 45,
-        width: "85%",
-        fontSize: 17,
-
-    },
-
-    textInputSummary: {
-        marginBottom: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 50,
-        height: "50%",
-        width: "95%",
-        fontSize: 17,
-        textAlign: 'center'
-    },
-
-    tittleModal: {
-        color: '#000000',
-        fontSize: 15,
-        fontWeight: 'bold',
-        paddingBottom: "10%",
-        textAlign: 'center'
-    }
 })

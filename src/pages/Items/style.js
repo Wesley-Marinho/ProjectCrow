@@ -28,7 +28,10 @@ export default StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
     },
-    
+    loadingContainer: {
+        alignItems: 'center',
+        paddingTop: '65%'
+    },
     itemContainer: {
         backgroundColor: '#000000',
         opacity: 0.8,

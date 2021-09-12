@@ -12,9 +12,7 @@ export default function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-
         async function dados() {
-
             await firebase.database().ref('item').on('value', (snapshot) => {
                 setItem([]);
                 snapshot.forEach((childItem) => {
@@ -27,41 +25,44 @@ export default function App() {
                     };
                     setItem(oldArray => [...oldArray, data]);
                 })
-                setLoading(false);
             })
         }
         dados();
+        setLoading(false)
     }, []);
 
     return (
         <LinearGradient colors={['#ffffff', '#363434',]}
             style={global.LinearGradientList}>
             {loading ? (
-                <View style={style.imgContainer}>
-                     <ActivityIndicator color="#fff" size={45} />
-                    <Image
-                        style={style.logo}
-                        source={require('../../img/icon.png')}
-                    />
-                </View>
-            ) 
-            :
-            (
-                <>
                     <View style={style.imgContainer}>
                         <Image
                             style={style.logo}
                             source={require('../../img/icon.png')}
                         />
-                    </View>
+                        <View style={style.loadingContainer}>
+                            <ActivityIndicator color="#000000" size={100} />
 
-                    <FlatList
-                        keyExtractor={item => item.key}
-                        data={item}
-                        renderItem={({ item }) => (<List data={item} />)}
-                    />
-                </>
-            )}
+                        </View>
+                    </View>
+            )
+                :
+                (
+                    <>
+                        <View style={style.imgContainer}>
+                            <Image
+                                style={style.logo}
+                                source={require('../../img/icon.png')}
+                            />
+                        </View>
+
+                        <FlatList
+                            keyExtractor={item => item.key}
+                            data={item}
+                            renderItem={({ item }) => (<List data={item} />)}
+                        />
+                    </>
+                )}
 
 
 

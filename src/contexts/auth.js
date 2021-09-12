@@ -9,6 +9,14 @@ function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
     const [loadingAuth, setLoadingAuth] = useState(false);
 
+
+    async function handleMonsterPick(level){
+        var ref = firebase.database().ref("monsters");
+        ref.orderByChild("challengeLevel").equalTo(level).on("child_added", function(snapshot) {
+         setMonsters(snapshot.key);
+        });
+    }
+
     async function handleMessage(tittle, contact, vacancies, system) {
       let key = await firebase.database().ref('chat').push().key;
       await firebase.database().ref('chat').child(key).set({
@@ -101,7 +109,7 @@ function AuthProvider({ children }) {
     return (
         <AuthContext.Provider value={{
             signed: !!user, user, loading, signUp: signUp, resetPassword,
-            signIn: signIn, signOut, loadingAuth, handleMessage
+            signIn: signIn, signOut, loadingAuth, handleMessage, handleMonsterPick
         }}>
             {children}
         </AuthContext.Provider>
