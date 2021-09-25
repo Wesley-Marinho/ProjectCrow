@@ -14,7 +14,7 @@ export default function App() {
         async function dados() {
 
             var ref = firebase.database().ref("monsters");
-            ref.orderByChild("challengeLevel").equalTo(2).on("child_added", function (snapshot) {
+            ref.orderByChild("challengeLevel").endAt(2).on("child_added", function (snapshot) {
                let data = {
                 key: snapshot.child('key').val(),
                 name: snapshot.child('name').val(),

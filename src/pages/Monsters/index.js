@@ -1,6 +1,7 @@
+import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect, useState } from 'react';
-import { FlatList, Image, View } from 'react-native';
+import { FlatList, Image, TextInput, TouchableOpacity, View } from 'react-native';
 import firebase from '../../database/firebaseConnection';
 import global from "../../style/global.js";
 import List from './List';
@@ -53,6 +54,24 @@ export default function App() {
                     style={style.logo}
                     source={require('../../img/icon.png')}
                 />
+            </View>
+
+            <View style={style.inputContainer}>
+                <TextInput
+                    style={style.textInput}
+                    placeholder={'Digite o nome do monstro'}
+                    placeholderTextColor={'#000000'}
+                    underlineColorAndroid="transparent"
+                   
+                />
+
+
+                <TouchableOpacity style={style.button}>
+                    <View style={style.btnArea}>
+                        <FontAwesome name="search" size={40} color="black" />
+                    </View>
+                </TouchableOpacity>
+
             </View>
 
             <FlatList

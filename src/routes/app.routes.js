@@ -1,4 +1,4 @@
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
@@ -40,7 +40,7 @@ function Tabs() {
             <Tab.Screen name="Maps" component={Maps}
                 options={{
                     tabBarIcon: ({ color, size }) => (
-                        <FontAwesome5 name='map-signs' color={color} size={size} />
+                        <FontAwesome name='map' color={color} size={size} />
                     )
                 }} />
             <Tab.Screen name="Chat" component={Chat} options={{

@@ -86,6 +86,7 @@ export default function App() {
           <View style={style.modalView}>
 
             <View style={style.closeButtonContainer}>
+              
               <TouchableOpacity
                 onPress={() => {
                   setModalVisible(!modalVisible);
@@ -96,7 +97,7 @@ export default function App() {
 
             <View style={style.modalItems}>
 
-              <Text style={style.tittleModal}>Compartilhe a sua campanha</Text>
+              <Text style={style.tittleModal}>Compartilhe a sua aventura</Text>
 
               <TextInput
                 style={style.textInput}
