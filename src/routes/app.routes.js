@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import Chat from "../pages/Chat";
-import Dice from '../pages/Dice';
 import Items from '../pages/Items';
 import LogOut from '../pages/LogOut';
 import Maps from '../pages/Maps';
@@ -18,6 +17,7 @@ import Yamogum from '../pages/MapsList/Small/CrowIsland/location/villageYamogum'
 import BigMap from '../pages/MapType/BigMap';
 import MediumMap from '../pages/MapType/MediumMap';
 import SmallMap from '../pages/MapType/SmallMap';
+import MonsterPick from '../pages/MonsterPick';
 import Monster from '../pages/Monsters';
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
@@ -208,7 +208,7 @@ function AppRoutes() {
                     headerTitle: 'Itens'
                 }} />
 
-            <AuthStack.Screen name="Dice" component={Dice}
+            <AuthStack.Screen name="MonsterPick" component={MonsterPick}
                 options={{
                     headerStyle: {
                         backgroundColor: '#ffffff',
@@ -216,7 +216,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'Dice'
+                    headerTitle: 'MonsterPick'
                 }} />
 
         </AuthStack.Navigator>
