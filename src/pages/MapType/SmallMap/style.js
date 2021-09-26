@@ -20,6 +20,7 @@ export default StyleSheet.create({
         backgroundColor: '#000000',
         padding: 10,
         margin: 10,
+        borderRadius: 10
     },
 
     listItens: {

@@ -55,6 +55,7 @@ export default StyleSheet.create({
         opacity: 0.8,
         padding: '2%',
         margin: '2%',
+        borderRadius: 10
     },
 
     imgContainer: {

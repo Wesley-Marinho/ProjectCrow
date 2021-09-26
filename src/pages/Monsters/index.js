@@ -1,20 +1,20 @@
-import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect, useState } from 'react';
-import { FlatList, Image, TextInput, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, TextInput, View } from 'react-native';
 import firebase from '../../database/firebaseConnection';
 import global from "../../style/global.js";
-import List from './List';
+import List from './List.js';
 import style from './style.js';
-
 export default function App() {
 
     const [monsters, setMonsters] = useState([]);
+    const [searchText, setSearchText] = useState('');
+    const [list, setList] = useState(monsters);
+    const [view, setView] = useState(false);
+
 
     useEffect(() => {
-
         async function dados() {
-
             await firebase.database().ref('monsters').on('value', (snapshot) => {
                 setMonsters([]);
                 snapshot.forEach((childItem) => {
@@ -45,6 +45,23 @@ export default function App() {
         dados();
     }, []);
 
+    useEffect(() => {
+        function dados() {
+            if (searchText === '') {
+                setList(monsters);
+            } else {
+                setList(
+                    monsters.filter(
+                        (item) =>
+                            item.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1
+                    )
+                );
+                setView(true);
+            }
+        }
+        dados()
+    }, [searchText]);
+
     return (
         <LinearGradient colors={['#ffffff', '#7A0400',]}
             style={global.LinearGradientList}>
@@ -59,26 +76,28 @@ export default function App() {
             <View style={style.inputContainer}>
                 <TextInput
                     style={style.textInput}
-                    placeholder={'Digite o nome do monstro'}
+                    placeholder={'Procurar por monstro...'}
                     placeholderTextColor={'#000000'}
                     underlineColorAndroid="transparent"
-                   
+                    value={searchText}
+                    onChangeText={(t) => setSearchText(t)}
+                    renderItem={({ item }) => <ListItem data={item} />}
                 />
-
-
-                <TouchableOpacity style={style.button}>
-                    <View style={style.btnArea}>
-                        <FontAwesome name="search" size={40} color="black" />
-                    </View>
-                </TouchableOpacity>
-
             </View>
 
-            <FlatList
-                keyExtractor={item => item.key}
-                data={monsters}
-                renderItem={({ item }) => (<List data={item} />)}
-            />
+            {view ? (
+                <FlatList
+                    data={list}
+                    renderItem={({ item }) => <List data={item} />}
+                    keyExtractor={(item) => item.id}
+                />
+            ) : (
+                <FlatList
+                    data={monsters}
+                    renderItem={({ item }) => <List data={item} />}
+                    keyExtractor={(item) => item.id}
+                />
+            )}
 
         </LinearGradient>
     )

@@ -45,6 +45,7 @@ export default StyleSheet.create({
         opacity: 0.8,
         padding: 10,
         margin: 10,
+        borderRadius: 10,
     },
 
     container: {
@@ -79,7 +80,7 @@ export default StyleSheet.create({
         borderColor: '#000000',
         borderRadius: 50,
         height: 45,
-        width: "75%",
+        width: "90%",
         fontSize: 17,
     },
 

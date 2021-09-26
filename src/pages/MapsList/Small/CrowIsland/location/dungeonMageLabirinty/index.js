@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { SafeAreaView, TouchableOpacity, View } from 'react-native';
@@ -32,8 +32,8 @@ export default function index() {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.infoButton}
-                 onPress={() => navigation.navigate('MonsterPick')}>
-                    <Ionicons name="information-circle" size={40} color={"#ffffff"} />
+                 onPress={() => navigation.navigate('Dice')}>
+                    <FontAwesome5 name="dice-d20" size={30} color="#ffffff" />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
