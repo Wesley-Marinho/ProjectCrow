@@ -16,7 +16,8 @@ export default function mapList() {
       </View>
 
       <View style={style.listItens}>
-        <Text style={style.tittle}>Crow Island</Text>
+        <Text style={style.tittle}>Ilha do corvo</Text>
+        <Text style={style.body}>Aventura medieval</Text>
       </View>
       
     </TouchableOpacity>

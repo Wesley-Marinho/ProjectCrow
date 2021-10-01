@@ -33,7 +33,7 @@ export default function index() {
 
                 <TouchableOpacity style={style.infoButton}
                  onPress={() => navigation.navigate('MonsterPick')}>
-                    <FontAwesome5 name="info" size={30} color="#ffffff" />
+                    <FontAwesome5 name="info" size={25} color="#ffffff" />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

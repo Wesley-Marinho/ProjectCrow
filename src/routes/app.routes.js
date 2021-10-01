@@ -1,4 +1,4 @@
-import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
@@ -37,19 +37,19 @@ function Tabs() {
                 activeBackgroundColor: '#000000',
                 inactiveTintColor: '#ffffff',
             }}>
-            <Tab.Screen name="Maps" component={Maps}
+            <Tab.Screen name="Mapas" component={Maps}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <FontAwesome name='map' color={color} size={size} />
                     )
                 }} />
-            <Tab.Screen name="Chat" component={Chat} options={{
+            <Tab.Screen name="Aventuras" component={Chat} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <FontAwesome5 name='comment-dots' style='solid' color={color} size={size} />
+                    <Ionicons name="ios-chatbubbles" size={size*1.4} color={color} />
                 )
             }} />
 
-            <Tab.Screen name="LogOut" component={LogOut} options={{
+            <Tab.Screen name="Sair" component={LogOut} options={{
                 tabBarIcon: ({ color, size }) => (
                     <FontAwesome5 name='power-off' color={color} size={size} />
                 )
@@ -106,7 +106,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'Crow Island'
+                    headerTitle: 'Ilha do corvo'
                 }} />
 
             <AuthStack.Screen name="Haum" component={Haum}
@@ -117,7 +117,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'Haum'
+                    headerTitle: 'Floresta de Haum'
                 }} />
 
             <AuthStack.Screen name="Doughnut" component={Doughnut}
@@ -128,7 +128,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'Doughnut'
+                    headerTitle: 'Castelo Doughnut'
                 }} />
 
             <AuthStack.Screen name="MageLabirinty" component={MageLabirinty}
@@ -139,7 +139,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'MageLabirinty'
+                    headerTitle: 'Labirinto do mago'
                 }} />
 
             <AuthStack.Screen name="Noir" component={Noir}
@@ -150,7 +150,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'Noir'
+                    headerTitle: 'Floresta Noir'
                 }} />
 
             <AuthStack.Screen name="OfStone" component={OfStone}
@@ -161,7 +161,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'OfStone'
+                    headerTitle: 'Floresta das pedras'
                 }} />
 
             <AuthStack.Screen name="Caruaru" component={Caruaru}
@@ -216,7 +216,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'MonsterPick'
+                    headerTitle: 'Nivel dos monstros'
                 }} />
 
         </AuthStack.Navigator>

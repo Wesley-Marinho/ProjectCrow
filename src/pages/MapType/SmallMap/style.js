@@ -10,9 +10,18 @@ export default StyleSheet.create({
         fontWeight: 'bold',
     },
 
+    body: {
+        color: '#ffffff',
+        fontSize: 15,
+        textAlign: "left",
+        fontWeight: 'bold',
+        paddingTop: '10%'
+    },
+
     img: {
         width: 120,
         height: 120,
+        borderRadius: 10
     },
 
     listContainer: {

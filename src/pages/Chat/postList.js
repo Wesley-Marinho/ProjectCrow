@@ -6,7 +6,7 @@ export default function List({ data }) {
 
         <View style={style.listContainer}>
             <Text style={style.tittle}>{data.tittle}</Text>
-            <Text style={style.textBody}>sistema da campanha: {data.system}</Text>
+            <Text style={style.textBody}>Sistema da campanha: {data.system}</Text>
             <Text style={style.textBody}>Numero de vagas: {data.vacancies}</Text>
             <Text style={style.textBody}>Contato: {data.contact}</Text>
         </View>
