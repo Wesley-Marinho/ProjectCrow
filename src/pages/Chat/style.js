@@ -1,36 +1,9 @@
 import { StyleSheet } from 'react-native';
 
-
 export default StyleSheet.create({
-    textInput: {
-        marginBottom: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 50,
-        height: 45,
-        width: "85%",
-        fontSize: 17,
-    },
 
-    tittle: {
-        color: '#ffffff',
-        fontSize: 30,
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
-
-    summary: {
-        color: '#ffffff',
-        fontSize: 15,
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
-
-    textBody: {
-        color: '#ffffff',
-        fontSize: 15,
-        fontWeight: 'bold',
+    tittleContainer: {
+        paddingVertical: "10%"
     },
 
     button: {
@@ -47,7 +20,7 @@ export default StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         padding: '2%',
-        paddingTop: '10%',
+        
     },
 
     listContainer: {
@@ -107,36 +80,5 @@ export default StyleSheet.create({
         paddingBottom: "10%"
     },
 
-    textInput:{
-        marginBottom: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 50,
-        height: 45,
-        width: "85%",
-        fontSize: 17,
-      
-    },
-
-    textInputSummary:{
-        marginBottom: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 50,
-        height: "50%",
-        width: "95%",
-        fontSize: 17,
-        textAlign: 'center'
-    },
-
-    tittleModal: {
-        color: '#000000',
-        fontSize: 15,
-        fontWeight: 'bold',
-        paddingBottom: "10%",
-        textAlign: 'center'
-    }
 
 })

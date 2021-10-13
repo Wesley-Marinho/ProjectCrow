@@ -12,8 +12,8 @@ let firebaseConfig = {
   measurementId: "G-73PTBY15XD"
 };
 
-if (!firebase.apps.length) {
+
   firebase.initializeApp(firebaseConfig);
-}
+
 
 export default firebase;

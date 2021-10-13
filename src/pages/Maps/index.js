@@ -14,14 +14,14 @@ export default function App() {
           style={global.img}
           source={require('../../img/icon.png')}
         />
-        <Text style={style.tittle}> Selecione um tamanho de mapa:</Text>
+        <Text style={style.tittle}>Onde será sua próxima aventura?</Text>
       </View>
 
       <View style={style.container}>
         <TouchableOpacity style={style.button}
         onPress={() => navigation.navigate('SmallMap')}>
           <Text style={style.link}>
-            Pequeno
+            Reino
           </Text>
         </TouchableOpacity>
       </View>
@@ -30,7 +30,7 @@ export default function App() {
         <TouchableOpacity style={style.button}
          onPress={() => navigation.navigate('MediumMap')}>
           <Text style={style.link}>
-            Médio
+            Continente
           </Text>
         </TouchableOpacity>
       </View>
@@ -39,7 +39,7 @@ export default function App() {
         <TouchableOpacity style={style.button}
          onPress={() => navigation.navigate('BigMap')}>
           <Text style={style.link}>
-            Grande
+            Mundo
           </Text>
         </TouchableOpacity>
       </View>

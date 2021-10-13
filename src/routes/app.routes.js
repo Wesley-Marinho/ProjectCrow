@@ -43,7 +43,7 @@ function Tabs() {
                         <FontAwesome name='map' color={color} size={size} />
                     )
                 }} />
-            <Tab.Screen name="Aventuras" component={Chat} options={{
+            <Tab.Screen name="Procura-se" component={Chat} options={{
                 tabBarIcon: ({ color, size }) => (
                     <Ionicons name="ios-chatbubbles" size={size*1.4} color={color} />
                 )
