@@ -13,15 +13,15 @@ export default function App() {
 
     useEffect(() => {
         async function dados() {
-            await firebase.database().ref('item').on('value', (snapshot) => {
+            await firebase.database().ref('item').child("WEAPONS").on('value', (snapshot) => {
                 setItem([]);
                 snapshot.forEach((childItem) => {
                     let data = {
                         key: childItem.key,
-                        nome: childItem.val().nome,
-                        dano: childItem.val().dano,
-                        valor: childItem.val().valor,
-                        propriedades: childItem.val().propriedades,
+                        name: childItem.val().name,
+                        damage: childItem.val().damage,
+                        price: childItem.val().price,
+                        properties: childItem.val().properties,
                     };
                     setItem(oldArray => [...oldArray, data]);
                 })
@@ -34,37 +34,19 @@ export default function App() {
     return (
         <LinearGradient colors={['#ffffff', '#363434',]}
             style={global.LinearGradientList}>
-            {loading ? (
-                    <View style={style.imgContainer}>
-                        <Image
-                            style={style.logo}
-                            source={require('../../img/icon.png')}
-                        />
-                        <View style={style.loadingContainer}>
-                            <ActivityIndicator color="#000000" size={100} />
 
-                        </View>
-                    </View>
-            )
-                :
-                (
-                    <>
-                        <View style={style.imgContainer}>
-                            <Image
-                                style={style.logo}
-                                source={require('../../img/icon.png')}
-                            />
-                        </View>
+            <View style={style.imgContainer}>
+                <Image
+                    style={style.logo}
+                    source={require('../../img/icon.png')}
+                />
+            </View>
 
-                        <FlatList
-                            keyExtractor={item => item.key}
-                            data={item}
-                            renderItem={({ item }) => (<List data={item} />)}
-                        />
-                    </>
-                )}
-
-
+            <FlatList
+                keyExtractor={item => item.key}
+                data={item}
+                renderItem={({ item }) => (<List data={item} />)}
+            />
 
         </LinearGradient>
     )

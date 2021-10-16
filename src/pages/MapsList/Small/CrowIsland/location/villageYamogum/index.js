@@ -1,4 +1,4 @@
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { SafeAreaView, TouchableOpacity, View } from 'react-native';
@@ -21,6 +21,11 @@ export default function index() {
                 <TouchableOpacity style={style.shieldButton}
                     onPress={() => navigation.navigate('Items')}>
                     <FontAwesome5 name="shield-alt" size={30} color="#ffffff" />
+                </TouchableOpacity>
+
+                <TouchableOpacity style={style.npcButton}
+                    onPress={() => navigation.navigate('Galeria_Fantasia')}>
+                      <Ionicons name="ios-people" size={30} color="#ffffff" />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

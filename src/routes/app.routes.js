@@ -1,4 +1,4 @@
-import { FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5, Ionicons, AntDesign } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
@@ -19,6 +19,10 @@ import MediumMap from '../pages/MapType/MediumMap';
 import SmallMap from '../pages/MapType/SmallMap';
 import MonsterPick from '../pages/MonsterPick';
 import Monster from '../pages/Monsters';
+
+import Galeria_Fantasia from '../pages/NPC_Fantasia_Galeria';
+import NPC_Fantasia from "../pages/NPC_Fantasia";
+
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
 
@@ -33,7 +37,7 @@ function Tabs() {
                 labelStyle: {
                     fontWeight: 'bold'
                 },
-                activeTintColor: '#ffffff',
+                activeTintColor: '#3202D1',
                 activeBackgroundColor: '#000000',
                 inactiveTintColor: '#ffffff',
             }}>
@@ -45,7 +49,7 @@ function Tabs() {
                 }} />
             <Tab.Screen name="Procura-se" component={Chat} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <Ionicons name="ios-chatbubbles" size={size*1.4} color={color} />
+                    <AntDesign name="notification" size={size*1.4} color={color} />
                 )
             }} />
 
@@ -217,6 +221,28 @@ function AppRoutes() {
                     },
                     headerTintColor: '#000000',
                     headerTitle: 'Nivel dos monstros'
+                }} />
+
+            <AuthStack.Screen name="Galeria_Fantasia" component={Galeria_Fantasia}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Seus personagens salvos'
+                }} />
+
+            <AuthStack.Screen name="NPC_Fantasia" component={NPC_Fantasia}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Crie um novo personagem'
                 }} />
 
         </AuthStack.Navigator>

@@ -16,11 +16,11 @@ export default StyleSheet.create({
         height: 45,
       
     },
-    infoButton: {
+    npcButton: {
         position: 'absolute',
         right: '15%',
         top: "0.5%",
-        backgroundColor: '#363434',
+        backgroundColor: '#9500F5',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,

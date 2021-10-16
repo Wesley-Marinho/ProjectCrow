@@ -2,16 +2,7 @@ import { StyleSheet } from 'react-native';
 
 
 export default StyleSheet.create({
-    textInput:{
-        marginBottom: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 50,
-        height: 45,
-        width: "85%",
-        fontSize: 17,
-    },
+
     Container: {
         alignItems: 'center',
         paddingTop: '10%',
@@ -21,12 +12,6 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         paddingTop: '10%',
-    },
-    link: {
-        color: '#ffffff',
-        fontSize: 15,
-        textAlign: 'center',
-        fontWeight:'bold',
     },
 
     button: {

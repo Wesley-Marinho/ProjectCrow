@@ -33,13 +33,6 @@ export default StyleSheet.create({
         paddingHorizontal: 4
     },
 
-    textAttributes: {
-        color: '#ffffff',
-        fontSize: 20,
-        paddingVertical: 2,
-        paddingHorizontal: 4
-    },
-
     monsterContainer: {
         backgroundColor: '#000000',
         opacity: 0.8,
@@ -71,17 +64,6 @@ export default StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
 
-    },
-
-    textInput: {
-        marginBottom: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 50,
-        height: 45,
-        width: "90%",
-        fontSize: 17,
     },
 
     inputContainer: {

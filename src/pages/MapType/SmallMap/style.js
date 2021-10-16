@@ -3,21 +3,6 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     
-    tittle: {
-        color: '#ffffff',
-        fontSize: 25,
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
-
-    body: {
-        color: '#ffffff',
-        fontSize: 15,
-        textAlign: "left",
-        fontWeight: 'bold',
-        paddingTop: '10%'
-    },
-
     img: {
         width: 120,
         height: 120,

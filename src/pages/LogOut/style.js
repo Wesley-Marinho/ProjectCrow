@@ -3,28 +3,17 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
 
-    tittle: {
-        color: '#000000',
-        fontSize: 25,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        paddingBottom: 20,
-    },
     containerTotal: {
         alignItems: 'center',
         paddingTop: 200
         
     },
+
     container: {
         alignItems: 'center',
         paddingTop: 100
     },
-    link: {
-        color: '#ffffff',
-        fontSize: 25,
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
+
     button: {
         justifyContent: 'center',
         borderWidth: 5,

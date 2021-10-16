@@ -1,30 +1,57 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet} from 'react-native';
 import style from './style.js';
+import AppLoading from 'expo-app-loading';
+import { useFonts, NovaMono_400Regular } from '@expo-google-fonts/nova-mono';
 export default function List({ data }) {
-  return (
+
+  let [fontsLoaded] = useFonts({
+    NovaMono_400Regular,
+  });
+
+  const font = StyleSheet.create({
+    tittle: {
+      color: '#ffffff',
+      fontSize: 20,
+      fontFamily: 'NovaMono_400Regular',
+      paddingHorizontal: 4
+    }, text: {
+      color: '#ffffff',
+      fontSize: 20,
+      paddingHorizontal: 4,
+      fontFamily: 'NovaMono_400Regular',
+    },
+  });
 
 
-    <View style={style.monsterContainer}>
+  if (!fontsLoaded) {
+    return <AppLoading />;
 
-      <View style={style.container}>
-        <Text style={style.tittle}>Nome: {data.name}</Text>
+  } else {
+    return (
+
+
+      <View style={style.monsterContainer}>
+
+        <View style={style.container}>
+          <Text style={font.tittle}>Nome: {data.name}</Text>
+        </View>
+
+        <View style={style.container}>
+          <Text style={font.tittle}>Descrição</Text>
+          <Text style={font.text}>{data.description}</Text>
+        </View>
+
+        <View style={style.container}>
+          <Text style={font.text}>Pontos de vida: {data.healthPoints}</Text>
+          <Text style={font.text}>Classe de armadura: {data.armor}</Text>
+          <Text style={font.text}>Nivel de desafio: {data.challengeLevel}</Text>
+          <Text style={font.text}>Experiencia apos a derrota: {data.exp}</Text>
+          <Text style={font.text}>Deslocamento: {data.displacement}</Text>
+        </View>
+
       </View>
 
-      <View style={style.container}>
-        <Text style={style.tittle}>Descrição</Text>
-        <Text style={style.text}>{data.description}</Text>
-      </View>
-
-      <View style={style.container}>
-          <Text style={style.text}>Pontos de vida: {data.healthPoints}</Text>
-          <Text style={style.text}>Classe de armadura: {data.armor}</Text>
-          <Text style={style.text}>Nivel de desafio: {data.challengeLevel}</Text>
-          <Text style={style.text}>Experiencia apos a derrota: {data.exp}</Text>
-          <Text style={style.text}>Deslocamento: {data.displacement}</Text>
-      </View>
-
-    </View>
-
-  )
+    )
+  }
 }

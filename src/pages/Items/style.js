@@ -22,12 +22,6 @@ export default StyleSheet.create({
         top: 50,
         opacity: 0.75,
     },
-
-    itemText: {
-        color: '#ffffff',
-        fontSize: 15,
-        fontWeight: 'bold',
-    },
     loadingContainer: {
         alignItems: 'center',
         paddingTop: '65%'
@@ -37,5 +31,6 @@ export default StyleSheet.create({
         opacity: 0.8,
         padding: 10,
         margin: 10,
+        borderRadius: 10
     }
 })

@@ -8,7 +8,7 @@ import global from "../../style/global.js";
 import PostList from './postList.js';
 import style from './style.js';
 import { useFonts, NovaMono_400Regular } from '@expo-google-fonts/nova-mono';
-
+import AppLoading from 'expo-app-loading';
 export default function App() {
 
   let [fontsLoaded] = useFonts({
@@ -22,6 +22,14 @@ export default function App() {
       fontSize: 20,
       textAlign: 'center',
     },
+
+    tittle: {
+      fontFamily: 'NovaMono_400Regular',
+      color: '#ffffff',
+      fontSize: 15,
+      textAlign: 'center',
+    },
+
     textInput: {
       fontFamily: 'NovaMono_400Regular',
       marginBottom: 10,
@@ -87,6 +95,9 @@ export default function App() {
     dados();
   }, []);
 
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
   return (
     <LinearGradient colors={['#ffffff', '#3202D1',]}
       style={global.LinearGradientList}>
@@ -183,7 +194,7 @@ export default function App() {
                 onPress={
                   () => handleMessage(tittle, contact, vacancies, system)
                 }>
-                <Text style={font.textBody}>Postar Aventura</Text>
+                <Text style={font.tittle}>Postar Aventura</Text>
               </TouchableHighlight>
 
             </View>
@@ -198,5 +209,5 @@ export default function App() {
       />
 
     </LinearGradient>
-  );
+  );}
 }

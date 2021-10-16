@@ -3,13 +3,6 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
 
-    tittle: {
-        color: '#ffffff',
-        fontSize: 20,
-        fontWeight: 'bold',
-        paddingHorizontal: 4
-    },
-
     imgContainer: {
         alignItems: 'center',
     },
@@ -25,19 +18,6 @@ export default StyleSheet.create({
         position: 'absolute',
         top: 50,
         opacity: 0.75,
-    },
-
-    text: {
-        color: '#ffffff',
-        fontSize: 20,
-        paddingHorizontal: 4
-    },
-
-    textAttributes: {
-        color: '#ffffff',
-        fontSize: 20,
-        paddingVertical: 2,
-        paddingHorizontal: 4
     },
 
     monsterContainer: {
@@ -71,17 +51,6 @@ export default StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
 
-    },
-
-    textInput: {
-        marginBottom: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 50,
-        height: 45,
-        width: "90%",
-        fontSize: 17,
     },
 
     inputContainer: {

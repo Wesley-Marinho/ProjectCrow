@@ -99,12 +99,17 @@ function AuthProvider({ children }) {
             })
     }
 
+
+    async function handleDeleteF(key, uid) {
+        await firebase.database().ref('npcF').child(uid).child(key).remove();
+    }
+
     return (
         <AuthContext.Provider value={{
             signed: !!user, user, loading, 
             signUp: signUp, resetPassword, 
             signIn: signIn, signOut, loadingAuth, 
-            handleMessage,  
+            handleMessage, handleDeleteF
         }}>
             {children}
         </AuthContext.Provider>
