@@ -20,7 +20,7 @@ export default function index() {
             }
         },
     ];
-    
+
     return (
         <SafeAreaView style={style.container}>
             <View style={style.container}>
@@ -32,9 +32,15 @@ export default function index() {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.infoButton}
-                 onPress={() => navigation.navigate('MonsterPick')}>
+                    onPress={() => navigation.navigate('MonsterPick')}>
                     <FontAwesome5 name="info" size={25} color="#ffffff" />
                 </TouchableOpacity>
+
+                <TouchableOpacity style={style.diceButton}
+                    onPress={() => navigation.navigate('Dice')}>
+                    <FontAwesome5 name="dice" size={25} color="#ffffff" />
+                </TouchableOpacity>
+
             </View>
         </SafeAreaView>
     );

@@ -331,7 +331,7 @@ export default function App() {
   } else {
 
   return (
-    <LinearGradient colors={['#ffffff', '#9500F5',]}
+    <LinearGradient colors={['#ffffff', '#363434',]}
     style = {global.LinearGradientHome}>
       
       <View style={style.imgContainer}>

@@ -1,4 +1,4 @@
-import { FontAwesome, FontAwesome5, Ionicons, AntDesign } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5, AntDesign } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
@@ -19,9 +19,14 @@ import MediumMap from '../pages/MapType/MediumMap';
 import SmallMap from '../pages/MapType/SmallMap';
 import MonsterPick from '../pages/MonsterPick';
 import Monster from '../pages/Monsters';
-
+import Dice from '../pages/DicePage';
 import Galeria_Fantasia from '../pages/NPC_Fantasia_Galeria';
 import NPC_Fantasia from "../pages/NPC_Fantasia";
+import Player from '../pages/Player';
+import Master from '../pages/Master';
+import Magic from '../pages/Magic';
+import Record from '../pages/Record';
+import RecordGallery from '../pages/RecordGallery';
 
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
@@ -41,15 +46,24 @@ function Tabs() {
                 activeBackgroundColor: '#000000',
                 inactiveTintColor: '#ffffff',
             }}>
-            <Tab.Screen name="Mapas" component={Maps}
+            <Tab.Screen name="Mestre" component={Master}
                 options={{
                     tabBarIcon: ({ color, size }) => (
-                        <FontAwesome name='map' color={color} size={size} />
+                        <FontAwesome5 name="hat-wizard" color={color} size={size} />
                     )
                 }} />
-            <Tab.Screen name="Procura-se" component={Chat} options={{
+
+            <Tab.Screen name="Jogador" component={Player}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <FontAwesome name="user" color={color} size={size} />
+
+                    )
+                }} />
+
+            <Tab.Screen name="Anuncios" component={Chat} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <AntDesign name="notification" size={size*1.4} color={color} />
+                    <AntDesign name="notification" size={size * 1.4} color={color} />
                 )
             }} />
 
@@ -243,6 +257,62 @@ function AppRoutes() {
                     },
                     headerTintColor: '#000000',
                     headerTitle: 'Crie um novo personagem'
+                }} />
+
+            <AuthStack.Screen name="Dice" component={Dice}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Dados'
+                }} />
+
+            <AuthStack.Screen name="Maps" component={Maps}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Mapas'
+                }} />
+
+            <AuthStack.Screen name="Magic" component={Magic}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Magias'
+                }} />
+
+
+            <AuthStack.Screen name="Record" component={Record}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Crie uma nova ficha'
+                }} />
+
+            <AuthStack.Screen name="RecordGallery" component={RecordGallery}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Fichas'
                 }} />
 
         </AuthStack.Navigator>

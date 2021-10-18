@@ -20,7 +20,7 @@ export default StyleSheet.create({
         position: 'absolute',
         right: '15%',
         top: "0.5%",
-        backgroundColor: '#9500F5',
+        backgroundColor: '#363434',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,

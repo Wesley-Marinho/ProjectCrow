@@ -28,4 +28,17 @@ export default StyleSheet.create({
         height: 45,
 
     },
+
+    diceButton: {
+        position: 'absolute',
+        right: '29%',
+        top: "0.5%",
+        backgroundColor: '#7A0400',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 100,
+        width: 45,
+        height: 45,
+
+    },
 })

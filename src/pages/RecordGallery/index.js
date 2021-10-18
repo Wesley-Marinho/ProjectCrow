@@ -26,7 +26,7 @@ export default function App() {
           };
           setNPC(oldArray => [...oldArray, data].reverse());
         })
-      
+
       })
     }
     dados();
@@ -34,8 +34,8 @@ export default function App() {
 
   return (
     <LinearGradient colors={['#ffffff', '#363434',]}
-    style = {global.LinearGradientHome}>
-      
+      style={global.LinearGradientHome}>
+
 
       <View style={style.imgContainer}>
         <Image
@@ -48,22 +48,19 @@ export default function App() {
 
         <TouchableOpacity
           style={style.button}
-          onPress={() => navigation.navigate('NPC_Fantasia')}>
+          onPress={() => navigation.navigate('Record')}>
           <FontAwesome5 name='plus' size={25} color={"#000000"} />
         </TouchableOpacity>
       </View>
 
-             
-          
+      <FlatList
+        keyExtractor={item => item.key}
+        data={npc}
+        renderItem={({ item }) => (<List data={item} />)}
+      />
 
-            <FlatList
-              keyExtractor={item => item.key}
-              data={npc}
-              renderItem={({ item }) => (<List data={item} />)}
-            />
-     
-        
-      
+
+
     </LinearGradient>
   );
 }
