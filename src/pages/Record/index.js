@@ -26,10 +26,9 @@ const font = StyleSheet.create({
 });
 
 let Race, Background, Class, Armor, Resistance, Skills, Life, Equipment, Weapons, Tools, Dice = 0,
-  Strength, strength, Dexterity, dexterity, Constitution, constitution,
-  Intelligence, intelligence, Wisdom, wisdom, Stats=[], Mods=[];
+  Stats = [], Mods = [], Displacement, Additional;
 
-const RACA = ["humano", "anão", "elfo", "hobbit", "meio-elfo", "gnomo", "meio-orc", "draconato", "halfling"],
+const RACA = ["Humano", "Anão", "Elfo", "Hobbit", "Meio-elfo", "Gnomo", "Meio-orc", "Draconato", "Halfling"],
 
   CLASS = ["Bárbaro", "Bardo", "Bruxo", "Clérigo", "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", "Paladino", "Patrulheiro"],
 
@@ -42,109 +41,139 @@ function calc() {
     Dice += Math.floor(Math.random() * 6) + 1
   }
   return Dice
-  
 }
 
 function stats() {
-  Stats[0] = calc()
+
+
+  Stats[0] += calc()
   Dice = 0
-  Stats[1] = calc()
+  Stats[1] += calc()
   Dice = 0
-  Stats[2] = calc()
+  Stats[2] += calc()
   Dice = 0
-  Stats[3] = calc()
+  Stats[3] += calc()
   Dice = 0
-  Stats[4] = calc()
+  Stats[4] += calc()
   Dice = 0
-  Stats[5] = calc()
+  Stats[5] += calc()
   Dice = 0
 
-  for(let i =0; i < Stats.length; i++) {
+  for (let i = 0; i < Stats.length; i++) {
     if (Stats[i] <= 3) {
       Mods[i] = "-4"
     }
     if (Stats[i] >= 4 && Stats[i] <= 5) {
       Mods[i] = "-3"
     }
- 
+
     if (Stats[i] >= 6 && Stats[i] <= 7) {
       Mods[i] = "-2"
     }
- 
+
     if (Stats[i] >= 8 && Stats[i] <= 9) {
       Mods[i] = "-1"
     }
- 
+
     if (Stats[i] >= 10 && Stats[i] <= 11) {
       Mods[i] = "0"
     }
- 
+
     if (Stats[i] >= 12 && Stats[i] <= 13) {
       Mods[i] = "+1"
     }
- 
+
     if (Stats[i] >= 14 && Stats[i] <= 15) {
       Mods[i] = "+2"
     }
- 
+
     if (Stats[i] >= 16 && Stats[i] <= 17) {
       Mods[i] = "+3"
     }
- 
+
     if (Stats[i] >= 18 && Stats[i] <= 19) {
       Mods[i] = "+4"
     }
- 
+
     if (Stats[i] >= 20 && Stats[i] <= 21) {
       Mods[i] = "+5"
     }
- 
+
     if (Stats[i] >= 22 && Stats[i] <= 23) {
       Mods[i] = "+6"
     }
- 
+
     if (Stats[i] >= 24 && Stats[i] <= 25) {
       Mods[i] = "+7"
     }
- 
+
     if (Stats[i] >= 26 && Stats[i] <= 27) {
       Mods[i] = "+8"
     }
   }
 
-  
+
 }
 
-function Races() {
-  if (Race == 'humano') {
-
-  }
-  if (Race == 'elfo') {
-
-  }
-  if (Race == 'anão') {
-
-  }
-  if (Race == 'hobbit') {
-
+function races() {
+  if (Race == 'Humano') {
+    Additional = "+1 em todos os atributos"
+    Displacement = "9m" 
   }
 
-  if (Race == 'meio-elfo') {
-
-  }
-  if (Race == 'gnomo') {
-
-  }
-  if (Race == 'meio-orc') {
-
-  }
-  if (Race == 'draconato') {
-
+  if (Race == 'Elfo') {
+    Stats[1] +=2;
+    Additional = "Nenhum"
+    Displacement = "9m" 
   }
 
-  if (Race == "halfling") {
-
+  if (Race == 'Anão') {
+    Stats[2] += 2;
+    Additional = "Nenhum"
+    Displacement = "7,5m"
   }
+
+  if (Race == 'Hobbit') {
+    Stats[1] += 2;
+    Additional = "Nenhum"
+    Displacement = "7,5m"
+  }
+
+  if (Race == 'Meio-elfo') {
+    Stats[5] +=2;
+    Additional = "+1 em dois atributos de sua escolha"
+    Displacement = "7,5m" 
+  }
+
+  if (Race == 'Gnomo') {
+    Stats[3] += 2;
+    Additional = "Nenhum"
+    Displacement = "7,5m"
+  }
+
+  if (Race == 'Meio-orc') {
+    Stats[0] +=2;
+    Stats[2] +=1;
+    Additional = "Nenhum"
+    Displacement = "9m" 
+  }
+
+  if (Race == 'Draconato') {
+    Stats[0] +=2;
+    Stats[5] +=1;
+    Additional = "Nenhum"
+    Displacement = "9m" 
+  }
+
+  if (Race == "Halfling") {
+    Stats[1] +=2;
+    Additional = "Nenhum"
+    Displacement = "7,5m" 
+  }
+}
+
+function background(){
+  
 }
 
 function classes() {
@@ -404,22 +433,32 @@ function Record() {
   Background = BACKGROUND[Math.floor(Math.random() * BACKGROUND.length)];
   Class = CLASS[Math.floor(Math.random() * CLASS.length)];
 
+  for(let i=0; i<Stats.length; i++){
+    Stats[i] = 0;
+  }
+
+  races();
   stats();
   classes();
+  
 
   return (
+    "Raça: " + Race + "\n" +
     "Classe: " + Class + "\n" +
+    "Antecedente: " + Background + "\n" +
     "Pontos de vida: " + Life + "\n" +
-    "Proeficiencia em armadura: " + Armor + "\n" + "\n" +
+    "Deslocamento " + Displacement + "\n" + "\n" +
 
+    
+    "Proeficiencia em armadura: " + Armor + "\n" +
     "Proeficiencia em armas: " + Weapons + "\n" +
     "Proeficiencia em ferramentas: " + Tools + "\n" +
     "Proeficiencia em habilidades: " + Skills + "\n" +
 
     "Resistencia em :" + Resistance + "\n" + "\n" +
 
+    "Adicional: " + Additional + "\n" +
     "Força: " + Stats[0] + " " + Mods[0] + "\n" +
-
     "Destreza: " + Stats[1] + " " + Mods[1] + "\n" +
     "Constituição: " + Stats[2] + " " + Mods[2] + "\n" +
     "Inteligencia: " + Stats[3] + " " + Mods[3] + "\n" +
