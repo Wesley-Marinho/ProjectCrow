@@ -1,108 +1,77 @@
-import { LinearGradient } from "expo-linear-gradient";
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, Image, View } from 'react-native';
-import firebase from '../../database/firebaseConnection';
+import { useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
+import React from 'react';
+import { Image, Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import global from "../../style/global.js";
-import ListWeapons from './ListWeapons.js';
-import ListArmor from './ListArmors.js';
-import ListEquipments from "./ListEquipments.js"
-import style from './style.js';
-
-
+import style from "./style.js";
+import AppLoading from 'expo-app-loading';
+import { useFonts, NovaMono_400Regular } from '@expo-google-fonts/nova-mono';
 export default function App() {
+  const navigation = useNavigation();
+  let [fontsLoaded] = useFonts({
+    NovaMono_400Regular,
+  });
 
-    const [weapons, setWeapons] = useState([]);
-    const [equipment, setEquipment] = useState([]);
-    const [armor, setArmor] = useState([]);
+  const font = StyleSheet.create({
+    link: {
+      color: '#ffffff',
+      fontSize: 25,
+      textAlign: 'center',
+      fontFamily: 'NovaMono_400Regular',
+    },
+    tittle: {
+      color: '#000000',
+      fontSize: 25,
+      textAlign: 'center',
+      paddingBottom: 20,
+      fontFamily: 'NovaMono_400Regular',
+    }
+  });
 
-    useEffect(() => {
-        async function dados() {
-            await firebase.database().ref('item').child("WEAPONS").on('value', (snapshot) => {
-                setWeapons([]);
-                snapshot.forEach((childItem) => {
-                    let data = {
-                        key: childItem.key,
-                        name: childItem.val().name,
-                        damage: childItem.val().damage,
-                        price: childItem.val().price,
-                        properties: childItem.val().properties,
-                    };
-                    setWeapons(oldArray => [...oldArray, data]);
-                })
-            })
-        }
-        dados();
+  if (!fontsLoaded) {
+    return <AppLoading />;
 
-    }, []);
+  } else {
 
 
-    useEffect(() => {
-        async function dados() {
-            await firebase.database().ref('item').child("EQUIPMENTS").on('value', (snapshot) => {
-                setEquipment([]);
-                snapshot.forEach((childItem) => {
-                    let data = {
-                        key: childItem.key,
-                        name: childItem.val().name,
-                        price: childItem.val().price,
-                    };
-                    setEquipment(oldArray => [...oldArray, data]);
-                })
-            })
-        }
-        dados();
+  return (
+    <LinearGradient colors={['#ffffff', '#363434',]}
+      style={global.LinearGradient}>
+      <View style={style.container}>
+        <Image
+          style={global.img}
+          source={require('../../img/icon.png')}
+        />
+       
+      </View>
 
-    }, []);
+      <View style={style.container}>
+        <TouchableOpacity style={style.button}
+          onPress={() => navigation.navigate('Weapon')}>
+          <Text style={font.link}>
+            Armas
+          </Text>
+        </TouchableOpacity>
+      </View>
 
-    useEffect(() => {
-        async function dados() {
-            await firebase.database().ref('item').child("ARMORS").on('value', (snapshot) => {
-                setArmor([]);
-                snapshot.forEach((childItem) => {
-                    let data = {
-                        key: childItem.key,
-                        name: childItem.val().name,
-                        armorclass: childItem.val().armorclass,
-                        price: childItem.val().price,
-                        type: childItem.val().type,
-                    };
-                    setArmor(oldArray => [...oldArray, data]);
-                })
-            })
-        }
-        dados();
+      <View style={style.container}>
+        <TouchableOpacity style={style.button}
+          onPress={() => navigation.navigate('Armor')}>
+          <Text style={font.link}>
+            Armmduras
+          </Text>
+        </TouchableOpacity>
+      </View>
 
-    }, []);
+      <View style={style.container}>
+        <TouchableOpacity style={style.button}
+          onPress={() => navigation.navigate('Equipment')}>
+          <Text style={font.link}>
+            Equipamentos
+          </Text>
+        </TouchableOpacity>
+      </View>
 
-    return (
-        <LinearGradient colors={['#ffffff', '#363434',]}
-            style={global.LinearGradientList}>
-
-            <View style={style.imgContainer}>
-                <Image
-                    style={style.logo}
-                    source={require('../../img/icon.png')}
-                />
-            </View>
-
-            <FlatList
-                keyExtractor={item => item.key}
-                data={weapons}
-                renderItem={({ item }) => (<ListWeapons data={item} />)}
-            />
-
-            <FlatList
-                keyExtractor={item => item.key}
-                data={armor}
-                renderItem={({ item }) => (<ListArmor data={item} />)}
-            />
-
-            <FlatList
-                keyExtractor={item => item.key}
-                data={equipment}
-                renderItem={({ item }) => (<ListEquipments data={item} />)}
-            />
-
-        </LinearGradient>
-    )
-}
+    </LinearGradient>
+  );
+}}

@@ -27,6 +27,10 @@ import Master from '../pages/Master';
 import Magic from '../pages/Magic';
 import Record from '../pages/Record';
 import RecordGallery from '../pages/RecordGallery';
+import Armor from '../pages/Armor'
+import Equipment from '../pages/Equipment'
+import Weapon from '../pages/Weapon'
+
 
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
@@ -313,6 +317,42 @@ function AppRoutes() {
                     },
                     headerTintColor: '#000000',
                     headerTitle: 'Fichas'
+                }} />
+
+
+            <AuthStack.Screen name="Armor" component={Armor}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Armaduras'
+                }} />
+
+
+            <AuthStack.Screen name="Equipment" component={Equipment}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Equipamentos'
+                }} />
+
+
+            <AuthStack.Screen name="Weapon" component={Weapon}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Armas'
                 }} />
 
         </AuthStack.Navigator>
