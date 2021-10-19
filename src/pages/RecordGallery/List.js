@@ -28,13 +28,13 @@ export default function List({ data }) {
     NovaMono_400Regular,
   });
   const { user: usuario } = useContext(AuthContext);
-  const { handleDeleteF } = useContext(AuthContext);
+  const { handleRecord } = useContext(AuthContext);
   function Alerta() {
     Alert.alert(
       "Cuidado!",
-      "Deseja mesmo apagar esse NPC?",
+      "Deseja mesmo apagar essa ficha?",
       [
-        { text: "Sim", onPress:() => handleDeleteF(data.key, usuario.uid) },
+        { text: "Sim", onPress:() => handleRecord(data.key, usuario.uid) },
         { text: "Não",}
       ],
       { cancelable: false }

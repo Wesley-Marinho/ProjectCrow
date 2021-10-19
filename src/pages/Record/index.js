@@ -26,9 +26,10 @@ const font = StyleSheet.create({
 });
 
 let Race, Background, Class, Armor, Resistance, Skills, Life, Equipment, Weapons, Tools, Dice = 0,
-  Stats = [], Mods = [], Displacement, Additional;
+  Stats = [], Mods = [], Displacement, Additional, backgroundSkills, backgroundLanguages, raceLanguages, backgroundEquipment,
+  backgroundTools;
 
-const RACA = ["Humano", "Anão", "Elfo", "Hobbit", "Meio-elfo", "Gnomo", "Meio-orc", "Draconato", "Halfling"],
+const RACA = ["Humano", "Anão", "Elfo", "Tiefling", "Meio-elfo", "Gnomo", "Meio-orc", "Draconato", "Halfling"],
 
   CLASS = ["Bárbaro", "Bardo", "Bruxo", "Clérigo", "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", "Paladino", "Patrulheiro"],
 
@@ -118,62 +119,137 @@ function stats() {
 function races() {
   if (Race == 'Humano') {
     Additional = "+1 em todos os atributos"
-    Displacement = "9m" 
+    Displacement = "9m"
+    raceLanguages = "Qualquer idioma de sua escolha e comum"
   }
 
   if (Race == 'Elfo') {
-    Stats[1] +=2;
+    Stats[1] += 2;
     Additional = "Nenhum"
-    Displacement = "9m" 
+    Displacement = "9m"
+    raceLanguages = "Elfico e comum"
   }
 
   if (Race == 'Anão') {
     Stats[2] += 2;
     Additional = "Nenhum"
     Displacement = "7,5m"
+    raceLanguages = "Anão e comum"
   }
 
-  if (Race == 'Hobbit') {
-    Stats[1] += 2;
+  if (Race == 'Tiefling') {
+    Stats[3] += 1;
+    Stats[5] += 2;
     Additional = "Nenhum"
-    Displacement = "7,5m"
+    Displacement = "9m"
+    raceLanguages = "Infernal e comum"
   }
 
   if (Race == 'Meio-elfo') {
-    Stats[5] +=2;
+    Stats[5] += 2;
     Additional = "+1 em dois atributos de sua escolha"
-    Displacement = "7,5m" 
+    Displacement = "7,5m"
+    raceLanguages = "Elfico, comum e mais um idoma de sua escolha"
   }
 
   if (Race == 'Gnomo') {
     Stats[3] += 2;
     Additional = "Nenhum"
     Displacement = "7,5m"
+    raceLanguages = "Gnomico e comum"
   }
 
   if (Race == 'Meio-orc') {
-    Stats[0] +=2;
-    Stats[2] +=1;
+    Stats[0] += 2;
+    Stats[2] += 1;
     Additional = "Nenhum"
-    Displacement = "9m" 
+    Displacement = "9m"
+    raceLanguages = "Orc e comum"
   }
 
   if (Race == 'Draconato') {
-    Stats[0] +=2;
-    Stats[5] +=1;
+    Stats[0] += 2;
+    Stats[5] += 1;
     Additional = "Nenhum"
-    Displacement = "9m" 
+    Displacement = "9m"
+    raceLanguages = "Dracônico e comum"
   }
 
   if (Race == "Halfling") {
-    Stats[1] +=2;
+    Stats[1] += 2;
     Additional = "Nenhum"
-    Displacement = "7,5m" 
+    Displacement = "7,5m"
+    raceLanguages = "Halfling e comum"
   }
 }
 
-function background(){
-  
+function background() {
+  if (Background == "Acólito") {
+    backgroundSkills = "Intuição e Religião."
+    backgroundEquipment = "Um símbolo sagrado (um presente dado a você quando entrou para o sacerdócio), um livro de orações ou uma roda de preces, 5 palitos de incenso, vestimentas, um conjunto de roupas comuns e uma algibeira contendo 15 peças de ouro"
+    backgroundLanguages = "Dois a sua escolha"
+    backgroundTools = "Nenhuma"
+  }
+
+  if (Background == "Artesão de Guilda") {
+    backgroundSkills = "Intuição e Persuasão."
+    backgroundEquipment = "Um conjunto de ferramentas de artesão (de sua escolha), uma carta de apresentação da sua guilda, um conjunto de roupas de viagem e uma algibeira contendo 15 peças de ouro."
+    backgroundLanguages = "Um da sua escolha"
+    backgroundTools = "Um tipo de ferramentas de artesão."
+  }
+  if (Background == "Charlatão") {
+    backgroundSkills = "Enganação e Prestidigitação."
+    backgroundEquipment = "Um conjunto de roupas finas, um kit de disfarce, ferramentas de enganação a sua escolha (dez garrafas fechadas com rolha cheias com líquidos coloridos, um conjunto de dados viciados, um baralho de cartas marcadas ou um anel de sinete de um duque imaginário) e uma algibeira contendo 15 peças de ouro"
+    backgroundLanguages = "Nenhum"
+    backgroundTools = "Kit de disfarce, kit de falsificação."
+  }
+  if (Background == "Criminoso") {
+    backgroundSkills = "Enganação, Furtividade"
+    backgroundEquipment = "Um pé de cabra, um conjunto de roupas escuras comuns com capuz e uma algibeira contendo 15 peças de ouro."
+    backgroundLanguages = "Nenhum"
+    backgroundTools = "Um tipo de conjunto de jogos, ferramentas de ladino"
+  }
+  if (Background == "Eremita") {
+    backgroundSkills = "Medicina e Religião"
+    backgroundEquipment = "Um porta pergaminho recheado de notas de seus estudos ou orações, um cobertor de inverno, um conjunto de roupas comuns, um kit de herbalismo e 5 peças de ouro."
+    backgroundLanguages = "Um da sua escolha"
+    backgroundTools = "Um tipo de conjunto de jogos, ferramentas de ladino"
+  }
+  if (Background == "Nobre") {
+    backgroundSkills = "História, Persuasão"
+    backgroundEquipment = "Um conjunto de roupas finas, um anel de sinete, um pergaminho de linhagem e uma bolsa contendo 25 peças de ouro."
+    backgroundLanguages = "Um da sua escolha"
+  }
+  if (Background == "Forasteiro") {
+    backgroundSkills = "Atletismo, Sobrevivência"
+    backgroundEquipment = "Um cajado, uma armadilha de caça, um troféu de um animal que você matou, um conjunto de roupas de viajante e uma bolsa algibeira contendo 10 peças de ouro."
+    backgroundLanguages = "Um da sua escolha"
+    backgroundTools = "Um tipo de instrumento musical"
+  }
+  if (Background == "Marinheiro") {
+    backgroundSkills = "Atletismo, Percepção"
+    backgroundEquipment = "Uma malagueta (porrete), 15 metros de corda de seda, um amuleto da sorte como um pé de coelho ou uma pequena moeda com um buraco no meio (ou você pode rolar uma bugiganga aleatória na tabela Bugigangas no Capítulo 5), um conjunto de roupas comuns e uma algibeira contendo 10 peças de ouro."
+    backgroundLanguages = "Nenhum"
+    backgroundTools = "Ferramentas de navegador, veículos (marítimo)"
+  }
+  if (Background == "Sábio") {
+    backgroundSkills = "Arcanismo, História"
+    backgroundEquipment = "Um vidro de tinta negra, uma pena, uma faca pequena, uma carta de um falecido colega lhe perguntando algo que nunca terá a chance de responder, um conjunto de roupas comuns e uma algibeira contendo 10 peças de ouro."
+    backgroundLanguages = "Dois a sua escolha"
+    backgroundTools = "Nenhuma"
+  }
+  if (Background == "Soldado") {
+    backgroundSkills = "Atletismo, Intimidação"
+    backgroundEquipment = "Uma insígnia de patente, um troféu obtido de um inimigo caído (uma adaga, lâmina quebrada ou pedaço de um estandarte), um conjunto de dados de osso ou cartas de baralho, um conjunto de roupas comuns e uma algibeira contendo 10 peças de ouro."
+    backgroundLanguages = "Nenhuma"
+    backgroundTools = "Um tipo de conjunto de jogos, veículos (terrestres)"
+  }
+  if (Background == "Orfão") {
+    backgroundSkills = "Prestidigitação, Furtividade."
+    backgroundEquipment = "Uma pequena faca, um mapa da cidade que você cresceu, um rato de estimação, um símbolo para lembrar seus pais, um conjunto de roupas comuns e uma algibeira contendo 10 peças de ouro."
+    backgroundLanguages = "Nenhum"
+    backgroundTools = "Um kit de disfarces, ferramentas de ladino"
+  }
 }
 
 function classes() {
@@ -183,7 +259,7 @@ function classes() {
 
     Armor = "Leves, Médias e escudos."
 
-    Resistance = "Strengthça e Constituição."
+    Resistance = "Força e Constituição."
 
     Weapons = "Simples e marciais"
 
@@ -238,6 +314,7 @@ function classes() {
       "(a) um pacote de estudioso ou (b) um pacote de masmorra" + "\n" +
       "Corselete de couro, qualquer arma simples, e duas adagas"
   }
+
   if (Class == "Clérigo") {
     Life = "PV 1º nível: 8 + mod de Constituição" + "\n"
       + "PV níveis posteriores: 1d8 (ou 5) + mod de Constituição";
@@ -307,7 +384,7 @@ function classes() {
 
     Armor = "Leves, médias, pesadas e escudos."
 
-    Resistance = "Strengthça e Constituição."
+    Resistance = "Força e Constituição."
 
     Weapons = "Simples e marciais."
 
@@ -370,7 +447,7 @@ function classes() {
 
     Armor = "Nenhuma."
 
-    Resistance = "Strengthça e Destreza."
+    Resistance = "Força e Destreza."
 
     Weapons = "Simples e espada curta."
 
@@ -411,7 +488,7 @@ function classes() {
 
     Armor = "Leves, médias e escudos."
 
-    Resistance = "Strengthça e Destreza."
+    Resistance = "Força e Destreza."
 
     Weapons = "Simples e marciais."
 
@@ -433,29 +510,31 @@ function Record() {
   Background = BACKGROUND[Math.floor(Math.random() * BACKGROUND.length)];
   Class = CLASS[Math.floor(Math.random() * CLASS.length)];
 
-  for(let i=0; i<Stats.length; i++){
+  for (let i = 0; i < Stats.length; i++) {
     Stats[i] = 0;
   }
 
   races();
   stats();
   classes();
-  
+  background();
 
   return (
     "Raça: " + Race + "\n" +
     "Classe: " + Class + "\n" +
     "Antecedente: " + Background + "\n" +
     "Pontos de vida: " + Life + "\n" +
-    "Deslocamento " + Displacement + "\n" + "\n" +
+    "Deslocamento " + Displacement + "\n" +
+    "Resistencia em :" + Resistance + "\n" +
+    "Idioma da raça: " + raceLanguages + "\n" +
+    "Idioma dos antecedentes: " + backgroundLanguages + "\n" + "\n" +
 
-    
     "Proeficiencia em armadura: " + Armor + "\n" +
     "Proeficiencia em armas: " + Weapons + "\n" +
     "Proeficiencia em ferramentas: " + Tools + "\n" +
     "Proeficiencia em habilidades: " + Skills + "\n" +
-
-    "Resistencia em :" + Resistance + "\n" + "\n" +
+    "Proeficiencia em habilidades dos antecedentes: " + backgroundSkills + "\n" +
+    "Proeficiencia em ferramentas dos antecedentes: " + backgroundTools + "\n" + "\n" +
 
     "Adicional: " + Additional + "\n" +
     "Força: " + Stats[0] + " " + Mods[0] + "\n" +
@@ -465,19 +544,29 @@ function Record() {
     "Sabedoria: " + Stats[4] + " " + Mods[4] + "\n" +
     "Carisma: " + Stats[5] + " " + Mods[5] + "\n" + "\n" +
 
-    "Equipamento: " + Equipment
+    "Equipamento: " + Equipment +
+    "Equipamento dos antecedentes: " + backgroundEquipment
   )
 }
 
 export default function App() {
 
+
+  const { user: usuario } = useContext(AuthContext);
   const [infoRecord, setRecord] = useState(Record());
 
   let [fontsLoaded] = useFonts({
     NovaMono_400Regular,
   });
 
-
+  async function salvar() {
+    let uid = usuario.uid;
+    let key = await firebase.database().ref('record').child(uid).push().key;
+    await firebase.database().ref('record').child(uid).child(key).set({
+      info: infoRecord
+    })
+    Alert.alert('Pronto!', 'Ficha Salva.')
+  }
 
   if (!fontsLoaded) {
     return <AppLoading />;
@@ -495,9 +584,26 @@ export default function App() {
           />
         </View>
 
-        <ScrollView style={style.npcContainer}>
-          <Text style={font.textBody}>{infoRecord}</Text>
-        </ScrollView>
+        
+          <ScrollView style={style.npcContainer}>
+            <Text style={font.textBody}>{infoRecord}</Text>
+          </ScrollView>
+        
+        <View style={style.actionButtonContainer}>
+        <TouchableOpacity style={style.buttonCreate}
+          onPress={() => setRecord(Record())}>
+          <View >
+            <Text style={font.buttonText}>Criar NPC</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={style.buttonSave}
+          onPress={salvar}>
+          <View >
+            <Text style={font.buttonText}>Salvar NPC</Text>
+          </View>
+        </TouchableOpacity>
+        </View>
       </LinearGradient>
     );
   }

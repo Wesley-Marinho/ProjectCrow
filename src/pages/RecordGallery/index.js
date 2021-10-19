@@ -17,12 +17,12 @@ export default function App() {
   useEffect(() => {
     let uid = usuario.uid;
     async function dados() {
-      await firebase.database().ref('npcF').child(uid).on('value', (snapshot) => {
+      await firebase.database().ref('record').child(uid).on('value', (snapshot) => {
         setNPC([]);
         snapshot.forEach((chilItem) => {
           let data = {
             key: chilItem.key,
-            npcF: chilItem.val().infor,
+            npcF: chilItem.val().info,
           };
           setNPC(oldArray => [...oldArray, data].reverse());
         })

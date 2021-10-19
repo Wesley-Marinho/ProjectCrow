@@ -5,13 +5,17 @@ export default StyleSheet.create({
     buttonSave: {
         textAlign: 'center',
         justifyContent: 'center',
-        position: 'absolute',
         borderRadius: 100,
         backgroundColor: '#000000',
         width: 150,
         height: 50,
-        bottom: 40,
-        right: 20
+
+    },
+
+    actionButtonContainer: {
+        flexDirection: 'row',
+        justifyContent: "space-around",
+        paddingVertical: "10%"
     },
 
     buttonCreate: {
@@ -19,18 +23,15 @@ export default StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 100,
         backgroundColor: '#000000',
-        position: 'absolute',
         width: 150,
         height: 50,
-        bottom: 40,
-        left: 20
     },
 
     buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'center',
-        padding: '2%',  
+        padding: '2%',
     },
 
     npcContainer: {

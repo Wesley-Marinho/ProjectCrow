@@ -3,18 +3,22 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, View } from 'react-native';
 import firebase from '../../database/firebaseConnection';
 import global from "../../style/global.js";
-import List from './List';
+import ListWeapons from './ListWeapons.js';
+import ListArmor from './ListArmors.js';
+import ListEquipments from "./ListEquipments.js"
 import style from './style.js';
+
 
 export default function App() {
 
-    const [item, setItem] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [weapons, setWeapons] = useState([]);
+    const [equipment, setEquipment] = useState([]);
+    const [armor, setArmor] = useState([]);
 
     useEffect(() => {
         async function dados() {
             await firebase.database().ref('item').child("WEAPONS").on('value', (snapshot) => {
-                setItem([]);
+                setWeapons([]);
                 snapshot.forEach((childItem) => {
                     let data = {
                         key: childItem.key,
@@ -23,12 +27,51 @@ export default function App() {
                         price: childItem.val().price,
                         properties: childItem.val().properties,
                     };
-                    setItem(oldArray => [...oldArray, data]);
+                    setWeapons(oldArray => [...oldArray, data]);
                 })
             })
         }
         dados();
-        setLoading(false)
+
+    }, []);
+
+
+    useEffect(() => {
+        async function dados() {
+            await firebase.database().ref('item').child("EQUIPMENTS").on('value', (snapshot) => {
+                setEquipment([]);
+                snapshot.forEach((childItem) => {
+                    let data = {
+                        key: childItem.key,
+                        name: childItem.val().name,
+                        price: childItem.val().price,
+                    };
+                    setEquipment(oldArray => [...oldArray, data]);
+                })
+            })
+        }
+        dados();
+
+    }, []);
+
+    useEffect(() => {
+        async function dados() {
+            await firebase.database().ref('item').child("ARMORS").on('value', (snapshot) => {
+                setArmor([]);
+                snapshot.forEach((childItem) => {
+                    let data = {
+                        key: childItem.key,
+                        name: childItem.val().name,
+                        armorclass: childItem.val().armorclass,
+                        price: childItem.val().price,
+                        type: childItem.val().type,
+                    };
+                    setArmor(oldArray => [...oldArray, data]);
+                })
+            })
+        }
+        dados();
+
     }, []);
 
     return (
@@ -44,8 +87,20 @@ export default function App() {
 
             <FlatList
                 keyExtractor={item => item.key}
-                data={item}
-                renderItem={({ item }) => (<List data={item} />)}
+                data={weapons}
+                renderItem={({ item }) => (<ListWeapons data={item} />)}
+            />
+
+            <FlatList
+                keyExtractor={item => item.key}
+                data={armor}
+                renderItem={({ item }) => (<ListArmor data={item} />)}
+            />
+
+            <FlatList
+                keyExtractor={item => item.key}
+                data={equipment}
+                renderItem={({ item }) => (<ListEquipments data={item} />)}
             />
 
         </LinearGradient>
