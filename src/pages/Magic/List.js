@@ -44,6 +44,8 @@ export default function List({ data }) {
 
       <View style={style.container}>
         <Text style={font.tittle}>Nome: {data.name}</Text>
+        <Text style={font.text}>Nível: {data.level}</Text>
+        <Text style={font.text}>Classes: {data.classes}</Text>
       </View>
 
       <View style={style.container}>
@@ -51,27 +53,6 @@ export default function List({ data }) {
         <Text style={font.text}>{data.description}</Text>
       </View>
 
-      <View style={style.container}>
-        <Text style={style.tittle}>Atributos</Text>
-        <Text style={font.textAttributes}>Carisma: {data.car}</Text>
-        <Text style={font.textAttributes}>Constituição: {data.con}</Text>
-        <Text style={font.textAttributes}>Destreza: {data.des}</Text>
-        <Text style={font.textAttributes}>Força: {data.for}</Text>
-        <Text style={font.textAttributes}>Inteligencia: {data.int}</Text>
-        <Text style={font.textAttributes}>Sabedoria: {data.sab}</Text>
-        <View style={style.otherAttributes}>
-          <Text style={font.text}>Pontos de vida: {data.healthPoints}</Text>
-          <Text style={font.text}>Classe de armadura: {data.armor}</Text>
-          <Text style={font.text}>Nivel de desafio: {data.challengeLevel}</Text>
-          <Text style={font.text}>Experiencia apos a derrota: {data.exp}</Text>
-          <Text style={font.text}>Deslocamento: {data.displacement}</Text>
-        </View>
-      </View>
-
-      <View style={style.container}>
-        <Text style={style.tittle}>Ataques</Text>
-        <Text style={font.text}>{data.attacks}</Text>
-      </View>
     </View>
 
   )

@@ -593,14 +593,14 @@ export default function App() {
         <TouchableOpacity style={style.buttonCreate}
           onPress={() => setRecord(Record())}>
           <View >
-            <Text style={font.buttonText}>Criar NPC</Text>
+            <Text style={font.buttonText}>Criar Ficha</Text>
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity style={style.buttonSave}
           onPress={salvar}>
           <View >
-            <Text style={font.buttonText}>Salvar NPC</Text>
+            <Text style={font.buttonText}>Salvar Ficha</Text>
           </View>
         </TouchableOpacity>
         </View>

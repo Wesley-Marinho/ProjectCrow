@@ -34,27 +34,15 @@ export default function App() {
 
     useEffect(() => {
         async function dados() {
-            await firebase.database().ref('monsters').on('value', (snapshot) => {
+            await firebase.database().ref('spells').on('value', (snapshot) => {
                 setMonsters([]);
                 snapshot.forEach((childItem) => {
                     let data = {
                         key: childItem.key,
                         name: childItem.val().name,
-                        armor: childItem.val().armor,
-                        attacks: childItem.val().attacks,
-
-                        car: childItem.val().attributes.car,
-                        con: childItem.val().attributes.con,
-                        des: childItem.val().attributes.des,
-                        for: childItem.val().attributes.for,
-                        int: childItem.val().attributes.int,
-                        sab: childItem.val().attributes.sab,
-
-                        challengeLevel: childItem.val().challengeLevel,
                         description: childItem.val().description,
-                        displacement: childItem.val().displacement,
-                        exp: childItem.val().exp,
-                        healthPoints: childItem.val().healthPoints,
+                        level: childItem.val().level,
+                        classes: childItem.val().classes,
                     };
                     setMonsters(oldArray => [...oldArray, data]);
                 })
