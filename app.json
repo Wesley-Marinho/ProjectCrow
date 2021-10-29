@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "projectCrow",
-    "slug": "projectCrow",
+    "name": "Escudo do Mestre",
+    "slug": "MasterShield",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,7 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.projectCrow",
+      "bundleIdentifier": "com.masterShield",
       "buildNumber": "1.0.1"
     },
     "android": {
@@ -26,7 +26,7 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.projectCrow",
+      "package": "com.masterShield",
       "versionCode": 3
     },
     "web": {
