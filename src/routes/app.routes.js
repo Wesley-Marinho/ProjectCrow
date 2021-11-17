@@ -27,10 +27,19 @@ import Master from '../pages/Master';
 import Magic from '../pages/Magic';
 import Record from '../pages/Record';
 import RecordGallery from '../pages/RecordGallery';
-import Armor from '../pages/Armor'
-import Equipment from '../pages/Equipment'
-import Weapon from '../pages/Weapon'
-
+import Armor from '../pages/Armor';
+import Equipment from '../pages/Equipment';
+import Weapon from '../pages/Weapon';
+import Niniel from './../pages/MapsList/Medium/Niniel';
+import Kritun from '../pages/MapsList/Medium/Niniel/location/villageKritun';
+import Boldrin from '../pages/MapsList/Medium/Niniel/location/villageBoldrin';
+import Lastam from '../pages/MapsList/Medium/Niniel/location/villageLastam';
+import Muraj from '../pages/MapsList/Medium/Niniel/location/villageMuraj';
+import Zunfrid from '../pages/MapsList/Medium/Niniel/location/villageZunfrid';
+import dungeonDark from '../pages/MapsList/Medium/Niniel/location/dungeonDark'
+import dungeonDesert from '../pages/MapsList/Medium/Niniel/location/dungeonDesert'
+import dungeonIce from '../pages/MapsList/Medium/Niniel/location/dungeonIce'
+import dungeonFire from '../pages/MapsList/Medium/Niniel/location/dungeonFire'
 
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
@@ -296,7 +305,6 @@ function AppRoutes() {
                     headerTitle: 'Magias'
                 }} />
 
-
             <AuthStack.Screen name="Record" component={Record}
                 options={{
                     headerStyle: {
@@ -319,7 +327,6 @@ function AppRoutes() {
                     headerTitle: 'Fichas'
                 }} />
 
-
             <AuthStack.Screen name="Armor" component={Armor}
                 options={{
                     headerStyle: {
@@ -330,7 +337,6 @@ function AppRoutes() {
                     headerTintColor: '#000000',
                     headerTitle: 'Armaduras'
                 }} />
-
 
             <AuthStack.Screen name="Equipment" component={Equipment}
                 options={{
@@ -343,7 +349,6 @@ function AppRoutes() {
                     headerTitle: 'Equipamentos'
                 }} />
 
-
             <AuthStack.Screen name="Weapon" component={Weapon}
                 options={{
                     headerStyle: {
@@ -353,6 +358,116 @@ function AppRoutes() {
                     },
                     headerTintColor: '#000000',
                     headerTitle: 'Armas'
+                }} />
+
+            <AuthStack.Screen name="Niniel" component={Niniel}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Niniel'
+                }} />
+
+            <AuthStack.Screen name="Kritun" component={Kritun}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Kritun'
+                }} />
+
+            <AuthStack.Screen name="Boldrin" component={Boldrin}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Boldrin'
+                }} />
+
+            <AuthStack.Screen name="Lastam" component={Lastam}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Lastam'
+                }} />
+
+            <AuthStack.Screen name="Muraj" component={Muraj}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Muraj'
+                }} />
+
+            <AuthStack.Screen name="Zunfrid" component={Zunfrid}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Zunfrid'
+                }} />
+
+            <AuthStack.Screen name="dungeonDark" component={dungeonDark}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'dungeonDark'
+                }} />
+
+            <AuthStack.Screen name="dungeonDesert" component={dungeonDesert}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'dungeonDesert'
+                }} />
+
+            <AuthStack.Screen name="dungeonIce" component={dungeonIce}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'dungeonIce'
+                }} />
+
+            <AuthStack.Screen name="dungeonFire" component={dungeonFire}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'dungeonFire'
                 }} />
 
         </AuthStack.Navigator>

@@ -58,7 +58,7 @@ export default function App() {
         <TouchableOpacity style={style.button}
           onPress={() => navigation.navigate('Armor')}>
           <Text style={font.link}>
-            Armmduras
+            Armaduras
           </Text>
         </TouchableOpacity>
       </View>

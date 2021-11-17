@@ -20,12 +20,6 @@ export default function App() {
     <LinearGradient colors={['#ffffff', '#7A0400',]}
       style={global.LinearGradientHome}>
 
-      <View style={style.imgContainer}>
-        <Image
-          style={style.logo}
-          source={require('../../img/icon.png')}
-        />
-      </View>
 
       <D4 />
       <D6 />
