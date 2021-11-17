@@ -47,8 +47,8 @@ export default StyleSheet.create({
 
     cityButton4: {
         position: 'absolute',
-        left: "28%",
-        bottom: "22%",
+        left: "32%",
+        bottom: "20%",
         backgroundColor: '#456CB0',
         justifyContent: 'center',
         alignItems: 'center',
