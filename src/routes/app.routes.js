@@ -40,7 +40,8 @@ import dungeonDark from '../pages/MapsList/Medium/Niniel/location/dungeonDark'
 import dungeonDesert from '../pages/MapsList/Medium/Niniel/location/dungeonDesert'
 import dungeonIce from '../pages/MapsList/Medium/Niniel/location/dungeonIce'
 import dungeonFire from '../pages/MapsList/Medium/Niniel/location/dungeonFire'
-
+import Vastyrio from '../pages/MapsList/Big/Vastyrio'
+import MapsPart from '../pages/MapsList/Big/Vastyrio/mapParts'
 const Tab = createBottomTabNavigator();
 const AuthStack = createStackNavigator();
 
@@ -434,7 +435,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'dungeonDark'
+                    headerTitle: 'O fim'
                 }} />
 
             <AuthStack.Screen name="dungeonDesert" component={dungeonDesert}
@@ -445,7 +446,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'dungeonDesert'
+                    headerTitle: 'A duvida'
                 }} />
 
             <AuthStack.Screen name="dungeonIce" component={dungeonIce}
@@ -456,7 +457,7 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'dungeonIce'
+                    headerTitle: 'O desespero'
                 }} />
 
             <AuthStack.Screen name="dungeonFire" component={dungeonFire}
@@ -467,7 +468,31 @@ function AppRoutes() {
                         borderBottomColor: '#000000',
                     },
                     headerTintColor: '#000000',
-                    headerTitle: 'dungeonFire'
+                    headerTitle: 'A perdição'
+                }} />
+
+            <AuthStack.Screen name="Vastyrio" component={Vastyrio}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Vastyrio'
+                }} />
+
+            
+
+            <AuthStack.Screen name="MapsPart" component={MapsPart}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#ffffff',
+                        borderBottomWidth: 0.25,
+                        borderBottomColor: '#000000',
+                    },
+                    headerTintColor: '#000000',
+                    headerTitle: 'Partes do mapa'
                 }} />
 
         </AuthStack.Navigator>
