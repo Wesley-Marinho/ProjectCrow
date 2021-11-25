@@ -89,7 +89,7 @@ export default function app() {
               loadingAuth ? (
                 <ActivityIndicator size={20} color="#FFF" />
               ) : (
-                <Text style={font.link}>Login</Text>
+                <Text style={font.link}>Entrar</Text>
               )
             }
           </TouchableOpacity>
